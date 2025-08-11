@@ -1,0 +1,181 @@
+/* Header.css */
+
+/* Header Main Container */
+.header-main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Nav Link Sections */
+.header-nav-left,
+.header-nav-right {
+  flex: 1; /* Use available space */
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Adjusted space */
+}
+
+.header-nav-left {
+  justify-content: flex-end;
+}
+
+.header-nav-right {
+  justify-content: flex-start;
+}
+
+/* Center Logo Area */
+.header-logo-center {
+  display: flex;
+  align-items: center;
+  padding: 0 3rem; /* Adjusted space */
+}
+
+.logo-img {
+  height: 60px; /* Shrunk logo size */
+  background-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* General Nav Link Styling */
+.custom-nav-link,
+.custom-nav-link:visited {
+  color: #FFFFFF;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+  padding-bottom: 8px;
+}
+
+.custom-nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease-in-out;
+}
+
+.custom-nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.custom-nav-link:hover {
+  color: #FFC107; /* Yellow hover text */
+}
+
+/* Custom Navbar Styles */
+.custom-navbar {
+  background-color: #4D784E;
+  padding: 5px 0; /* Shrunk header padding */
+  transition: padding 0.3s ease-in-out;
+  position: relative; /* Changed from sticky to relative */
+  z-index: 1020;
+
+}
+
+.custom-navbar .navbar-nav {
+  align-items: flex-start; /* Align mobile links to the left */
+}
+
+.logo-img-mobile {
+  height: 10px; /* Shrunk mobile logo */
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Dropdown Styles */
+.dropdown-menu {
+  background-color: #4D784E;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+  animation: slide-in 0.3s ease-out;
+}
+
+.dropdown-item {
+  color: #FFFFFF;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #4B5320; /* Military Green */
+  color: #FFC107; /* Yellow */
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Language Switcher Button */
+.lang-switcher-btn {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.lang-switcher-btn:hover {
+  background-color: #4B5320;
+  border-color: #4B5320;
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 991.98px) {
+  .custom-navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .custom-navbar .navbar-toggler {
+    order: 1;
+  }
+
+  .navbar-collapse {
+    order: 2; /* Nav items now second */
+    width: 100%;
+  }
+
+  .mobile-logo-container {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+  }
+
+  .navbar-nav .dropdown-menu {
+    text-align: left; /* Align dropdown items to the left */
+    background-color: transparent;
+    border: none;
+  }
+}
+
+/* DESKTOP: Open dropdown on hover */
+@media (min-width: 992px) {
+  .nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0; /* remove the gap so it doesn't close on hover */
+  }
+}

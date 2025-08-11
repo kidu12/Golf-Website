@@ -1,0 +1,51 @@
+/* footer.css */
+
+.footer-custom {
+  background-color: #4D784E;
+  color: #FFFFFF;
+}
+
+.footer-custom h5 {
+  color: #FFFFFF;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.footer-link,
+.footer-link:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #4B5320; /* Military Green for hover */
+}
+
+.footer-social-icon a {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social-icon a:hover {
+  color: #4B5320; /* Military Green */
+  transform: scale(1.1);
+}
+
+.btn-footer-submit {
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-footer-submit:hover {
+  background-color: #4B5320; /* Military Green */
+  border-color: #4B5320;
+  color: #FFFFFF;
+}
+
+.footer-custom hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}

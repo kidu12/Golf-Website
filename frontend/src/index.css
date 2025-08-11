@@ -1,0 +1,54 @@
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* after this is mine */
+
+/* --- Global Branding --- */
+body {
+  background-color: #FFFFFF; /* White background */
+  color: #333; /* Default text color */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #4D784E;
+}
+
+a {
+  color: #4D784E;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #4B5320; /* Military Green on hover */
+}
+
+/* --- Bootstrap Button Override --- */
+.btn-primary {
+  background-color: #4B5320 !important; /* Military Green */
+  border-color: #4B5320 !important;
+  color: #FFFFFF !important;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #556B2F !important; /* A slightly lighter green for interaction */
+  border-color: #556B2F !important;
+  color: #FFFFFF !important;
+  box-shadow: none !important;
+}
+

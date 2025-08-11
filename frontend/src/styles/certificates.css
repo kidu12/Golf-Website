@@ -1,0 +1,101 @@
+.certificate-section {
+  background-color: #f8f9fa; /* Light Gray */
+}
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-img-wrapper {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  outline: none;
+}
+
+.modal-img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 8px;
+}
+
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.fullscreen-overlay {
+  background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+}
+
+.fullscreen-modal {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  outline: none;
+}
+
+.fullscreen-img {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  border-radius: 8px;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  color: #FFFFFF;
+  background: #4D784E;
+  border: 2px solid #FFFFFF; /* White border for visibility */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1060;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: background-color 0.3s ease;
+}
+
+.modal-close-btn:hover {
+  background-color: #4B5320; /* Military Green */
+}
+
+/* Swiper Navigation Arrows */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #4B5320; /* Military Green */
+  font-size: 1.5rem !important;
+  font-weight: bold;
+}
+
+.swiper-button-next:hover::after,
+.swiper-button-prev:hover::after {
+  color: #556B2F; /* Lighter Military Green */
+}

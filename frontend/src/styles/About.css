@@ -1,0 +1,39 @@
+.about-intro-section {
+  background-color: #f8f9fa; /* Light Gray */
+}
+
+.icon-vision {
+  color: #4D784E !important;
+}
+
+.icon-mission {
+  color: #4B5320 !important; /* Military Green */
+}
+
+.icon-values {
+  color: #4D784E !important;
+}
+
+/* --- Facilities Section --- */
+.facilities-section {
+  background-color: #f8f9fa; /* Light Gray */
+}
+
+.facility-card {
+  background-color: #FFFFFF;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.facility-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.facility-icon {
+  color: #4B5320; /* Military Green */
+  font-size: 2.5rem;
+}
