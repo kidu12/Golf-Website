@@ -20,7 +20,7 @@ const TennisHero = ({ language }) => {
       style={{
         backgroundImage: `url(${images[index]})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'top',
         height: '60vh',
         transition: 'background-image 1s ease-in-out',
         position: 'relative',

@@ -1,11 +1,13 @@
 import React, { useRef, useState } from 'react';
-import steam from '../assets/images/Spa-1.webp';
-import locker from '../assets/images/Spa-4.webp';
-import massage from '../assets/images/Spa-3.webp';
-import interior from '../assets/images/Spa-2.webp';
-import decor from '../assets/images/Spa-7.webp';
+import steam from '../assets/images/Room_02.webp';
+import locker from '../assets/images/Room_07.webp';
+import massage from '../assets/images/Room_03.webp';
+import interior from '../assets/images/Room_04.webp';
+import decor from '../assets/images/Room_01.webp';
+import room2 from '../assets/images/room_2.webp';
+import room3 from '../assets/images/room_3.webp';
 
-const images = [steam, locker, massage, interior, decor];
+const images = [steam, locker, massage, interior, decor,room3, room2];
 
 const SpaGallery = ({ language }) => {
   const scrollRef = useRef(null);
@@ -19,7 +21,7 @@ const SpaGallery = ({ language }) => {
     <section className="gallery-wrapper py-5 bg-dark text-white ">
       <div className="container">
 <h2 className="fw-bold mb-4 text-center text-white">
-  {language === 'am' ? 'ስፓ እና ስቲም ማዕከል ጋለሪ' : 'Spa & Steam Center Gallery'}
+  {language === 'am' ? 'ሳውና እና የማሳጅ ጋለሪ' : 'Sauna Bath & Massage Gallery'}
 </h2>
         <div className="gallery-scroll-wrapper">
           <button className="scroll-btn left" onClick={() => scroll('left')}>&lt;</button>

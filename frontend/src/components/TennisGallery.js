@@ -1,14 +1,15 @@
 import React, { useRef, useState } from 'react';
 
-import court1 from '../assets/images/Court_2.webp';
-import court2 from '../assets/images/Court_3.webp';
-import coach from '../assets/images/Court_5.webp';
-import kids from '../assets/images/Court_4.webp';
-import adults from '../assets/images/Court_1.webp';
-
+import court from '../assets/images/golf_store.webp';
+import court1 from '../assets/images/green.webp';
+import court2 from '../assets/images/Golf_2.webp';
+import coach from '../assets/images/bg1.webp';
+import kids from '../assets/images/Golf_4.webp';
+import green from '../assets/images/Golf_1.webp';
+import green2 from '../assets/images/Golf_3.webp';
 import '../styles/gallery.css';
 
-const images = [court1, court2, coach, kids, adults];
+const images = [court,court1, court2, coach, kids, green, green2];
 
 const TennisGallery = ({ language }) => {
   const scrollRef = useRef(null);
@@ -22,7 +23,7 @@ const TennisGallery = ({ language }) => {
     <section className="gallery-wrapper py-5 bg-dark text-white">
       <div className="container">
 <h2 className="fw-bold mb-4 text-center text-white">
-  {language === 'en' ? 'Tennis Court Gallery' : 'የቴኒስ መገለጫ ጋለሪ'}
+  {language === 'en' ? 'Golf Course Gallery' : 'ጎልፍ ጋለሪ'}
 </h2>
         <div className="gallery-scroll-wrapper">
           <button className="scroll-btn left" onClick={() => scroll('left')}>&lt;</button>

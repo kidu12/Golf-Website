@@ -2,11 +2,11 @@ import React, { useRef, useState } from 'react';
 
 import '../styles/gallery.css';
 
-import gym1 from '../assets/images/Gym-2.webp';
-import gym2 from '../assets/images/Gym-4.webp';
-import gym3 from '../assets/images/Gym-3.webp';
-import gym4 from '../assets/images/Gym-1.webp';
-import gym5 from '../assets/images/Gym-6.webp';
+import gym1 from '../assets/images/Gym-10.webp';
+import gym2 from '../assets/images/Gym-1.webp';
+import gym3 from '../assets/images/Gym-13.webp';
+import gym4 from '../assets/images/Gym-5.webp';
+import gym5 from '../assets/images/Gym-2.webp';
 
 const images = [gym1, gym2, gym3, gym4, gym5];
 

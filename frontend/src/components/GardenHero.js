@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import garden1 from '../assets/images/Garden-5.webp';
-import garden2 from '../assets/images/gurdon_6.webp';
-import garden3 from '../assets/images/gurdon_5.webp';
+import garden1 from '../assets/images/GR_4.webp';
+import garden2 from '../assets/images/GR_6.webp';
+import garden3 from '../assets/images/GR_1.webp';
 
 const images = [garden1, garden2, garden3];
 
@@ -28,12 +28,12 @@ const GardenHero = ({ language }) => {
       <div className="overlay position-absolute w-100 h-100 opacity-50"></div>
       <div className="container position-relative z-2">
        <h1 className="display-4 fw-bold text-white">
-  {language === 'en' ? 'Garden Area & Grounds' : 'አረንጓዴ መሬት'}
+  {language === 'en' ? 'Garden Area' : 'አረንጓዴ ስፍራ'}
 </h1>
 <p className="lead mt-2">
   {language === 'en'
-    ? 'A vibrant, secure space for up to 6000-10000 guests and all your special events.'
-    : 'ለ 6000-10000 እንግዶች እና ለሁሉም ልዩ ዝግጅቶች የተዘጋጀ እና ደህንነቱ የተጠበቀ ቦታ።'
+    ? 'A stunning outdoor venue for unforgettable weddings, lively concerts, and cultural festivals.'
+    : 'ለማይረሱ የሰርግ ስነ-ስርዓቶች፣ ለደማቅ ኮንሰርቶች እና ለባህላዊ ፌስቲቫሎች የሚሆን አስደናቂ የውጪ ቦታ።'
   }
 </p>
 

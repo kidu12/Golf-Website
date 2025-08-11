@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/AboutSection.css';
-import hotelImage from '../assets/images/bg1.webp'; // replace with your actual image path
+import hotelImage from '../assets/images/bg5.webp'; // replace with your actual image path
 
 const AboutSection = ({ language }) => {
   const sectionRef = useRef(null);
@@ -34,24 +34,24 @@ const AboutSection = ({ language }) => {
         <div className="col-md-5 mb-4 mb-md-0">
           <img
             src={hotelImage}
-            alt="Ethiopian Defense Forces Officers Club image "
+            alt="Addis Ababa Golf Club image"
             className="img-fluid rounded shadow-sm custom-img"
           />
         </div>
-        <div className="col-md-7">
+        <div className="col-md-7 d-flex flex-column justify-content-center">
 <h6 className="text-uppercase text-muted mb-2 about-label">
   {language === 'en' ? 'About Us' : 'ስለ እኛ'}
 </h6>
 <h2 className="about-heading">
   {language === 'en' 
-    ? 'Your ideal holiday begins here!' 
-    : 'የእርስዎ የማይረሳ የበዓል ዝግጅትዎን በዚህ ቦታ ይጀምሩ!'}
+    ? 'Your Perfect Golf Experience Begins Here With Us!!' 
+    : 'በጎልፍ ክለባችን የሚስበን ተሞክሮዎ ከእኛ ጋር እዚህ ይጀምሩሩ!'}
 </h2>
 
 <p className="text-secondary">
   {language === 'en'
-    ? 'Welcome to the Defence Force Officers Club, a distinguished establishment since 1992, located in the heart of Addis Ababa’s Lideta sub-city. Just 100 meters from the main road and directly across from the renowned Torhayloch Hospital, our club is set within the tranquil grounds of the Ministry of Defence Army Foundation.At the Defence Force Officers Club, we offer a serene oasis designed for relaxation and leisure, featuring premier hotel services and recreational facilities. We proudly serve military personnel, civilians, and both governmental and non-governmental organizations. Our dedicated team of highly trained professionals is committed to delivering an exceptional experience that exceeds your expectations.'
-    : 'የመኮንኖች ክበብ ከ1992 ዓ.ም በፊት የተመሰረተና በኢትዮጵያ ፣አዲስ አበባ፣ልደታ ክ/ከተማ ፣ ጦር ሃይሎች፣ ከጦር ሃይሎች ሆስፒታል ፊት ለፊት (መንገድ ተሻግሮ) 100 ሜትር ገባ ብሎ ይገኛል።በተጨማሪም ክበቡ ከተመሰረተ ጀምሮ ለወታደራዊ አባላትናቤተሰቦቻቸው፣ ለመንግስታዊ እና መንግሥታዊ ላልሆኑ ድርጅቶችና ህዝቦች የተለያዩ ዝግጅቶችን በሚቀርብለት ጥያቄ መሰረት  የሆቴል፣ የባር፣ የጅም፣ የሜዳቴንስ፣ የጋብቻ እና ምርቃት ዝግጅት የአዳራሽ ኪራይ እና ሌሎች አገልግሎቶችን በተመጣጣኝ ዋጋ እና በጥራት እያቀረበ ይገኛል።'}
+    ? 'Welcome to the Addis Ababa Golf Club, a prestigious institution established in 1992, situated in the heart of Addis Ababa’s Lideta sub-city. Our club is nestled within the serene grounds of the Ministry of Defence Army Foundation. At the Addis Ababa Golf Club, we provide a tranquil retreat designed for relaxation and leisure, featuring top-tier hotel services, an exceptional golf course, and a variety of recreational facilities. We cater to military personnel, civilians, and both governmental and non-governmental organizations. Our committed team of highly trained professionals is dedicated to delivering an outstanding experience that consistently surpasses your expectations.'
+    : 'እንኳን ወደ የኢትዮጵያ መከላከያ ሰራዊት ፋውንዴሽን አዲስ አበባ ጎልፍ ክለብ በደህና መጡ!! በአሁኑ ጊዜ የመከላከያ ሰራዊት ፋውንዴሽን አዲስ አበባ  ጎልፍ ክለብ የቀድሞ ስሙ አዲስ አበባ ጎልፍ ክለብ  በአፄ ሃ/ስላሴ ዘመነ መንግስት በ1949 ዓ.ም ግንባታው ተጀምሮ በ1952 ዓ.ም ተጠናቆ ሰራ እንደጀመረ ይነገራል። አሁን ላይ ለሰራዊቱ፣ ለሰራዊቱ ቤተሰብ እንዲሁም ለማህበረሰቡ  በስራ የደከመ አእምሯቸውን እንዲያሳርፍ፣ የእርስ በርስ ግንኙነታቸውን የሚያጠናክሩበት የመዝናኛ ማዕከል ነው።በተጨማሪም ክበቡ ከተመሰረተ ጀምሮ ለወታደራዊ አባላትናቤተሰቦቻቸው፣ ለመንግስታዊ እና መንግሥታዊ ላልሆኑ ድርጅቶችና ህዝቦች የተለያዩ ዝግጅቶችን በሚቀርብለት ጥያቄ መሰረት የሆቴል፣ የባር፣ የጅም፣ጎልፍ መ ጫወቻ፣ የጋብቻ እና ምርቃት ዝግጅት የአዳራሽ ኪራይ እና ሌሎች አገልግሎቶችን በተመጣጣኝ ዋጋ እና በጥራት እያቀረበ ይገኛል። በኢትዮጵያ ፣አዲስ አበባ፣ልደታ ክ/ከተማ ፣ ጦር ሃይሎች ይገኛል።'}
 </p>
 <div className="text-center">
   <Link to="/about">

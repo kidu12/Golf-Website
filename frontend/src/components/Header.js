@@ -15,30 +15,51 @@ const Header = ({ language, onLanguageChange }) => {
     membership: { en: 'Membership', am: 'አባልነት' },
     news: { en: 'Event and News', am: 'መረጃ እና ዜና' },
     contact: { en: 'Contact Us', am: 'ያግኙን' },
-    brand: { en: 'Defence Force Officers Club', am: 'የመከላከያ መኮንኖች ክበብ' },
+    brand: { en: 'Golf Club', am: 'ጎልፍ ክለብ' },
   };
 
   const serviceLinks = [
-    { path: '/conference', text: { en: 'Conference Hall', am: 'የመሰብሰቢያ አዳራሽ' } },
-    { path: '/bar', text: { en: 'Restaurant & Kitchen', am: 'ባር እና ሬስቶራንት' } },
-    { path: '/spa', text: { en: 'Spa & Steam Center', am: 'ስፓ እና ስቲም' } },
-    { path: '/gym', text: { en: 'Fitness & Gym', am: 'ፊትነስ እና ጂም' } },
-    { path: '/tennis', text: { en: 'Tennis Court', am: 'ሜዳ ቴኒስ' } },
-    { path: '/garden', text: { en: 'Garden & Grounds', am: 'አረንጓዴ ስፍራ' } },
+    { path: '/tennis', text: { en: 'Golf Course', am: 'የጎልፍ ስፖርት'} },
+    { path: '/bar', text: { en: 'Bar & Restaurant', am: 'ባር እና ሬስቶራንት'} },
+    { path: '/garden', text: { en: 'Garden & Grounds', am: 'አረንጓዴ ስፍራ'} },
+    { path: '/spa', text: { en: 'Room Service', am: 'ክፍል አገልግሎት'} },
+    { path: '/gym', text: { en: 'Fitness & Gym', am: 'ፊትነስ እና ጂም'} },
+    { path: '/conference', text: { en: 'VIP Conference Room', am: 'የመሰብሰቢያ አዳራሽ'} },
+    { path: '/juice-bar', text: { en: 'Juice Bar', am: 'የፍራፍሬ ጭማቂ ባር'} },
+    { path: '/childrens-playground', text: { en: 'Childrens Playground', am: 'የልጆች መጫወቻ'} },
+    { path: '/car-wash', text: { en: 'Car Wash', am: 'የመኪና ማጠቢያ'} },
+    { path: '/coffee-ceremony', text: { en: 'Coffee Ceremony', am: 'የቡና ሥነ-ስርዓት'} },
+    { path: '/catering-service', text: { en: 'Catering Service', am: 'የምግብ አቅርቦት አገልግሎት'} },
+    { path: '/services/exhibitions-and-bazaars', text: { en: 'Exhibitions & Bazaars', am: 'ኤግዚቢሽኖች እና ባዛሮች'} },
     { path: '/other-services', text: { en: 'Others', am: 'ሌሎች' } },
   ];
 
-  return (
+    return (
     <nav className="navbar navbar-expand-lg custom-navbar">
       <div className="container-fluid">
-        <button className="navbar-toggler" type="button" onClick={handleNavCollapse} aria-controls="navbarNav" aria-expanded={!isNavCollapsed}>
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <NavLink className="navbar-brand d-lg-none mx-auto" to="/">
-        <img src={logo} alt="Club Logo" height="50"   loading="lazy" 
- className="rounded-circle" /> 
- </NavLink>
+        <div className="d-lg-none w-100 d-flex align-items-center justify-content-between mobile-header-row">
+          <NavLink className="navbar-brand mobile-logo-left" to="/">
+            <img src={logo} alt="Addis Ababa Golf Club Logo" style={{ width: '60px', height: '50px', objectFit: 'cover' }} loading="lazy" className="rounded-circle mobile-logo" />
+          </NavLink>
+          <div className="d-flex align-items-center gap-2">
+            <button
+              onClick={onLanguageChange}
+              className="btn btn-outline-light d-flex align-items-center gap-2 lang-switcher-btn mobile-lang-btn"
+              style={{fontSize: '1rem'}}
+            >
+              <FaGlobe /> {language === 'en' ? 'አማ' : 'EN'}
+            </button>
+            <button
+              className={`navbar-toggler hamburger-anim ${!isNavCollapsed ? 'open' : ''}`}
+              type="button"
+              onClick={handleNavCollapse}
+              aria-controls="navbarNav"
+              aria-expanded={!isNavCollapsed}
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </div>
 
         <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarNav">
           <div className="header-main-container d-none d-lg-flex">
@@ -50,7 +71,7 @@ const Header = ({ language, onLanguageChange }) => {
 
             <div className="header-logo-center">
               <NavLink className="navbar-brand" to="/">
-              <img src={logo} alt="Club Logo" height="60"   loading="lazy" 
+              <img src={logo} alt="Addis Ababa Golf Club Logo" style={{ width: '60px', height: '60px', objectFit: 'cover' }} loading="lazy" 
  className="rounded-circle" />
  </NavLink>
  
@@ -94,9 +115,7 @@ const Header = ({ language, onLanguageChange }) => {
               <li className="nav-item"><NavLink to="/news-events" className="nav-link custom-nav-link" onClick={handleNavCollapse} end>{navText.news[language]}</NavLink></li>
               <li className="nav-item"><NavLink to="/contact" className="nav-link custom-nav-link" onClick={handleNavCollapse} end>{navText.contact[language]}</NavLink></li>
               <li className="nav-item mt-2">
-                <button onClick={onLanguageChange} className="btn btn-outline-light d-flex align-items-center gap-2 lang-switcher-btn mx-auto">
-                  <FaGlobe /> {language === 'en' ? 'አማ' : 'EN'}
-                </button>
+               
               </li>
             </ul>
           </div>

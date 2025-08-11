@@ -20,6 +20,12 @@ import TennisCourt from './pages/TennisCourt';
 import OtherServicesDetail from './pages/OtherServices';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Membership from './pages/Membership';
+import JuiceBar from './pages/JuiceBar';
+import ChildrensPlayground from './pages/ChildrensPlayground';
+import CarWash from './pages/CarWash';
+import CoffeeCeremony from './pages/CoffeeCeremony';
+import CateringService from './pages/CateringService';
+import ExhibitionsAndBazaars from './pages/ExhibitionsAndBazaars';
 
 // Admin
 
@@ -72,6 +78,12 @@ const App = () => {
         <Route path="/other-services" element={<OtherServicesDetail language={language} />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy language={language} />} />
               <Route path="/membership" element={<Membership language={language} />} />
+        <Route path="/juice-bar" element={<JuiceBar language={language} />} />
+        <Route path="/childrens-playground" element={<ChildrensPlayground language={language} />} />
+        <Route path="/car-wash" element={<CarWash language={language} />} />
+        <Route path="/coffee-ceremony" element={<CoffeeCeremony language={language} />} />
+        <Route path="/catering-service" element={<CateringService language={language} />} />
+        <Route path="/services/exhibitions-and-bazaars" element={<ExhibitionsAndBazaars language={language} />} />
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route
           path="/admin/*"

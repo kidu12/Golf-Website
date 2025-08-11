@@ -5,7 +5,7 @@ const services = [
   {en: "Parking", am: "መኪና ማቆሚያ"},
   {en: "Laundry", am: "ልብስ ማጠቢያ"},
   {en: "VIP Restaurant and Bar", am: "(VIP) ምግብ ቤት እና ባር"},
-  {en: "VIP Meeting Hall", am: "(VIP) ስብሰባ አዳራሽ"},
+  {en: "Sauna Bath & Massage (Partner Service)", am: "ሳውና እና ማሳጅ (በአጋር የሚሰጥ አገልግሎት)"},
   {en: "Outdoor Catering", am: "ውጪ ምግብ አቅራቢ"},
   {en: "DSTV and WiFi Internet", am: "ዲኤስቲቪ እና ዋይፋይ ኢንተርኔት"},
   {en: "Traditional Ethiopian Coffee Ceremony", am: "የባህላዊ የቡና ስነስርዓት"}

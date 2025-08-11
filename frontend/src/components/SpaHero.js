@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import spa1 from '../assets/images/Spa-5.webp';
-import spa2 from '../assets/images/Spa-1.webp';
-import spa3 from '../assets/images/Spa-2.webp';
+import room1 from '../assets/images/Room_04.webp'; // TODO: Replace with actual room images
+import room2 from '../assets/images/Room_06.webp';
+import room3 from '../assets/images/Room_02.webp';
 
-const spaImages = [spa1, spa2, spa3];
+const heroImages = [room2, room3, room1];
 
 const SpaHero = ({ language }) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => setIndex((prev) => (prev + 1) % spaImages.length), 5000);
+    const timer = setInterval(() => setIndex((prev) => (prev + 1) % heroImages.length), 5000);
     return () => clearInterval(timer);
   }, []);
 
@@ -17,9 +17,10 @@ const SpaHero = ({ language }) => {
     <section
       className="d-flex align-items-center text-white text-center"
       style={{
-        backgroundImage: `url(${spaImages[index]})`,
-        backgroundSize: 'cover',
+        backgroundImage: `url(${heroImages[index]})`,
+        backgroundSize: '100% 100%',
         backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         height: '60vh',
         position: 'relative',
         transition: 'background-image 1s ease-in-out'
@@ -28,13 +29,13 @@ const SpaHero = ({ language }) => {
       <div className="overlay position-absolute w-100 h-100  opacity-50"></div>
       <div className="container position-relative z-2">
        <h1 className="display-4 fw-bold text-white">
-  {language === 'am' ? 'ስፓ እና ስቲም ማዕከል' : 'Spa & Steam Center'}
+  {language === 'am' ? 'የመኝታ አገልግሎት' : 'Room Service'}
 </h1>
 
 <p className="lead mt-2">
   {language === 'am' 
-    ? 'በዘመናዊ የስፓ ተቋማችን ያርፉ፣ እንደገና ያጸኑ እና ኃይል ይሙሉ።' 
-    : 'Relax, rejuvenate, and recharge in our modern spa facilities.'}
+    ? 'ፅዱ እና ምቹ የመኝታ አገልግሎት በተመጣጣኝ ዋጋ ፤ ከተሟላ ፋሲሊቲ ጋር እናቀርባለን።' 
+    : 'Experience comfort and relaxation in our luxurious rooms.'}
 </p>
 
       </div>

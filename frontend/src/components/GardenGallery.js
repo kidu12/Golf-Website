@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
-import garden1 from '../assets/images/Garden-5.webp';
-import garden2 from '../assets/images/gurdon_6.webp';
-import garden3 from '../assets/images/Garden-4.webp';
-import crowd from '../assets/images/gurdon_5.webp';
-import wedding from '../assets/images/Garden-5.webp';
+import garden1 from '../assets/images/GR_2.webp';
+import garden2 from '../assets/images/GR_3.webp';
+import garden3 from '../assets/images/gardon_11.webp';
+import crowd from '../assets/images/gardon_13.webp';
+import wedding from '../assets/images/GR_6.webp';
 import '../styles/gallery.css';
 
 const images = [garden1, garden2, garden3, crowd, wedding];

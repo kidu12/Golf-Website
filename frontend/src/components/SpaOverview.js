@@ -1,69 +1,110 @@
 import React from 'react';
 
 const SpaOverview = ({ language }) => {
+  // Bilingual data for room amenities
+  const amenities = {
+    general: [
+      { en: "Safe deposit box", am: "ደህንነቱ የተጠበቀ የቁሳቁስ ካዝና" },
+      { en: "Slippers", am: "ንፁህ ነጠላ ጫማ" },
+      { en: "Work desk", am: "ምቹ የስራ ቦታ" },
+    ],
+    bathroom: [
+      { en: "Bath or shower", am: "መታጠቢያ ክፍል" },
+      { en: "Towels", am: "ንፁህ ፎጣ" },
+      { en: "Free toiletries", am: "ነፃ ተጨማሪ አስፈላጊ ቁሳቁሶች" }
+    ],
+    dining: [
+      { en: "Electric kettle", am: "የኤሌክትሪክ በራድ (ሻይ ማፍያ)" },
+      { en: "Dining area", am: "መመገቢያ ቦታ" }
+    ],
+    media: [
+      { en: "Flat-screen TV", am: "ጠባይ ማያ ገጽ ቴሌቪዥን" },
+      { en: "Wake-up service", am: "የማንቂያ ደውል" }
+    ]
+  };
+
   return (
     <section className="container py-5">
-     <h2 className="fw-bold mb-4">
-  {language === 'am' ? 'አጠቃላይ እይታ' : 'Overview'}
-</h2>
+      {/* Deluxe Room Section */}
+      <div className="room-details mb-5">
+        <h2 className="fw-bold mb-3">{language === 'en' ? 'Deluxe Room' : 'ዴሉክስ ክፍል'}</h2>
+        <p className="lead">{language === 'en' ? '2 GUESTS, 1 KING-SIZE BED' : '2 እንግዶች፣ 1 ኪንግ-ሳይዝ መኝታ'}</p>
+        
+        <div className="row mt-4">
+          <div className="col-md-6">
+            <h4 className="fw-bold">{language === 'en' ? 'General' : 'አጠቃላይ'}</h4>
+            <ul>
+              {amenities.general.map((item, index) => (
+                <li key={index}>{language === 'en' ? item.en : item.am}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="col-md-6">
+            <h4 className="fw-bold">{language === 'en' ? 'Bathroom' : 'መታጠቢያ ቦታ'}</h4>
+            <ul>
+              {amenities.bathroom.map((item, index) => (
+                <li key={index}>{language === 'en' ? item.en : item.am}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="col-md-6">
+            <h4 className="fw-bold">{language === 'en' ? 'Dining' : 'ምግብ ቤት'}</h4>
+            <ul>
+              {amenities.dining.map((item, index) => (
+                <li key={index}>{language === 'en' ? item.en : item.am}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="col-md-6">
+            <h4 className="fw-bold">{language === 'en' ? 'Media' : 'ሚዲያ'}</h4>
+            <ul>
+              {amenities.media.map((item, index) => (
+                <li key={index}>{language === 'en' ? item.en : item.am}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
 
-<p>
-  {language === 'am'
-    ? 'ድርጅታችን ዘመናዊ የስቲም እና ስፓ አገልግሎቶች በከፍተኛ ጥራትና ምቾት  ያግኙ።'
-    : 'Our Spa & Steam Center is dedicated to providing complete relaxation and rejuvenation. Indulge in a comprehensive range of wellness treatments, from steam and sauna sessions to expert massage therapy, all administered by trained professionals.'}
-</p>
+      {/* Twin Room Section */}
+      <div className="room-details">
+        <h2 className="fw-bold mb-3">{language === 'en' ? 'Twin Room' : 'መንትያ ክፍል'}</h2>
+        <p className="lead">{language === 'en' ? '2 GUESTS, 2 SINGLE BEDS' : '2 እንግዶች፣ 2 ነጠላ አልጋዎች'}</p>
 
-<p>
-  {language === 'am'
-    ? 'የስቲም እና ስፓ ማዕከላችን በሚያምር ሁኔታ ያጌጡ እና እንግዶች  በለስላሳ ብርሃን ለአእምሮ ሰላም ተስማሚ የሆነ የተረጋጋ አካባቢ ማግኘት ይቸላሉ።'
-    : 'The facilities are elegantly decorated and meticulously sanitized, offering guests secure magnetic lockers, soothing lighting, and a tranquil environment perfect for peace of mind.'}
-</p>
-
-<p>
-  {language === 'am'
-    ? 'የስቲም እና ስፓ ማዕከላችን:- በማዕከሉ ከሰኞ እስከ ቅዳሜ ከጠዋቱ 2፡00 ሰዓት እስ 11 ስአት አገልግሎት የሚሰጥና  የተዋበ ፣ የግል ደህንነቱ የተጠበቀ ሎከር ያለው እና የመብራት ዝርጋታውም የሚስብ ነው።'
-    : 'Open daily from Monday to Sunday, 8:00 AM to 10:00 PM, our center serves as a sanctuary for those who prioritize hygiene and exceptional hospitality.'}
-</p>
-
-<h4 className="mt-4">
-  {language === 'am' ? 'መሳሪያዎች' : 'Facilities'}
-</h4>
-
-<div className="table-responsive">
-  <table className="table table-bordered mt-3">
-    <thead className="table-light">
-      <tr>
-        <th>{language === 'am' ? 'ዋና መለያዎች' : 'Feature'}</th>
-        <th>{language === 'am' ? 'መግለጫ' : 'Description'}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{language === 'am' ? 'ማሳጅ' : 'Massage'}</td>
-        <td>{language === 'am' ? 'በባለሙያ የሰውነት ሙሉ ጤና ማሳጅ' : 'Professional full-body and relaxation massage therapy'}</td>
-      </tr>
-      <tr>
-        <td>{language === 'am' ? 'ስቲም እና ሳውና' : 'Steam & Sauna'}</td>
-        <td>{language === 'am' ? 'ዘመናዊ ሳውና እና የውሃ ስቲም ስርዓት ጋር' : 'Modern sauna with integrated water steam system'}</td>
-      </tr>
-      <tr>
-        <td>{language === 'am' ? 'ንፅህና' : 'Hygiene'}</td>
-        <td>{language === 'am' ? 'ለንፅህና  አስተማማኝነት ከፍተኛ ደረጃ' : 'High standards for cleanliness and comfort'}</td>
-      </tr>
-      <tr>
-        <td>{language === 'am' ? 'ሎከር' : 'Locker'}</td>
-        <td>{language === 'am' ? 'ለእንግዶች ግላዊነት የማግኔቲክ ቁልፍ ያለው ደህንነቱ የተጠበቀ ሎከር' : 'Magnetic-lock secure lockers for guest privacy'}</td>
-      </tr>
-      <tr>
-        <td>{language === 'am' ? 'ሰራተኞች' : 'Staff'}</td>
-        <td>{language === 'am' ? 'ብቁ የስፓ ባለሙያዎች' : 'Trained and certified spa professionals'}</td>
-      </tr>
-      <tr>
-        <td>{language === 'am' ? 'ስራ ሰዓት' : 'Hours'}</td>
-        <td>{language === 'am' ? 'ከጠዋት 8:00 እስከ ምሽት 10:00 ድረስ ክፍት ነው' : 'Open daily from 8:00 AM to 10:00 PM'}</td>
-      </tr>
-    </tbody>
-  </table>
+        <div className="row mt-4">
+          <div className="col-md-6">
+            <h4 className="fw-bold">{language === 'en' ? 'General' : 'አጠቃላይ'}</h4>
+            <ul>
+              {amenities.general.map((item, index) => (
+                <li key={index}>{language === 'en' ? item.en : item.am}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="col-md-6">
+            <h4 className="fw-bold">{language === 'en' ? 'Bathroom' : 'ማጠቢያ ቤት'}</h4>
+            <ul>
+              {amenities.bathroom.map((item, index) => (
+                <li key={index}>{language === 'en' ? item.en : item.am}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="col-md-6">
+            <h4 className="fw-bold">{language === 'en' ? 'Dining' : 'ምግብ ቤት'}</h4>
+            <ul>
+              {amenities.dining.map((item, index) => (
+                <li key={index}>{language === 'en' ? item.en : item.am}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="col-md-6">
+            <h4 className="fw-bold">{language === 'en' ? 'Media' : 'ሚዲያ'}</h4>
+            <ul>
+              {amenities.media.map((item, index) => (
+                <li key={index}>{language === 'en' ? item.en : item.am}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   );

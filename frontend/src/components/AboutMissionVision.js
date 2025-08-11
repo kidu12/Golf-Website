@@ -20,8 +20,8 @@ const AboutMissionVision = ({ language }) => {
     </h5>
     <p>
       {language === 'en' 
-        ? 'To be a gold standard in the hospitality industry and the foremost community hub in Ethiopia, dedicated to serving military officers, their families, and the community, where health, connection, and excellence thrive through a diverse range of outstanding services.'
-        : 'ራዕያችን በዘርፉ ከተሰማሩ ተመሳሳይ  አገልግሎት  ሰጭ ተቋማት መካከል በመኮንኖች፣ በቤተሰቦቻቸው እና በማህበረሰባችን ግንባር ቀደም ለላቀ አገልግሎት ተመራጭ እና  የመገናኛ ማዕከል መሆን ነው።'
+        ? '“To be Ethiopia’s leading golf and hospitality destination—renowned for excellence, unity, and service—while honoring our Defence Force roots.”'
+        : '“የመከላከያ ሰራዊታችንን መሰረት እያከበርን በልህቀት፣ በአንድነት እና በአገልግሎት የምንታወቅ የኢትዮጵያ መሪ የጎልፍ እና የእንግዳ ተቀባይነት መዳረሻ መሆን።”'
       }
     </p>
 
@@ -34,8 +34,8 @@ const AboutMissionVision = ({ language }) => {
     </h5>
     <p>
       {language === 'en' 
-        ? 'Our mission is to cultivate a dynamic and empowered community of military officers to enhance member satisfaction and contribute to strengthening our organizational identity,stability, and prosperity for our members, partners, and community.'
-        : 'ተልዕኳችን ለአባሎቻችን፣ለአጋሮቻችን እና ለማህበረሰባችን የተሟላ አገልግሎት  በመስጠት ዘመኑን እንዲዋጁ እና ሃላፊነታቸውን በቀላሉ እንዲወጡ ማስቻል።በተጨማሪም አካላዊ እና አዕምሯዊ ማበልፀጊያ አገልግሎቶችን ማቅረብ ፣ የተረጋጋ ድርጅታዊ መለያና የስራ ባህል በመፍጠር አገራዊና ተቋማዊ ብልጽግናን ለማጠናከር አስተዋጽኦ ማድረግ ናቸው።'
+        ? '“Deliver top-tier golf, hospitality, and events that spark sportsmanship, kick back some relaxation, and bring people together—always backing the Defence Force community and beyond.”'
+        : '“የስፖርታዊ ጨዋነትን መንፈስ የሚያነቃቁ፣ መዝናናትን የሚያመጡ እና ሰዎችን የሚያሰባስቡ ከፍተኛ ደረጃ ያላቸው የጎልፍ፣ የእንግዳ ተቀባይነት እና የዝግጅት አገልግሎቶችን መስጠት—ሁልጊዜም ከመከላከያ ሰራዊት ማህበረሰብ እና ከዚያም በላይ በመደገፍ።”'
       }
     </p>
     
@@ -51,16 +51,16 @@ const AboutMissionVision = ({ language }) => {
       ? [
           'Integrity',
           'Excellence',
-          'Strong corporate identity and reputation',
-          'Customer satisfaction',
-          'Employee empowerment and teamwork',
+          'Service Commitment',
+          'Customer Focus',
+          'Teamwork and Empowerment',
         ]
       : [
           'ታማኝነት',
-          'የላቀ አገልግሎት',
-          'ጠንካራ ድርጅታዊ ማንነትና ስም',
-          'የደንበኛ እርካታር',
-          'የቡድን ስራ እና የሰራተኞችን አቅም ማሳደግ ዋና ዋናዎቹ ናቸው።',
+          'ልህቀት',
+          'ለአገልግሎት ቁርጠኝነት',
+          'የደንበኛ ትኩረት',
+          'የቡድን ስራ እና ማብቃት',
         ]
     ).map((item, index) => (
       <div key={index} className="d-flex align-items-start mb-2">

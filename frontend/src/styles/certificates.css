@@ -99,3 +99,16 @@
 .swiper-button-prev:hover::after {
   color: #556B2F; /* Lighter Military Green */
 }
+
+/* Custom style for the 7th certificate */
+.certificate-slide-contain {
+  background-color: #EFE4B0;
+  border-radius: 0.375rem; /* Corresponds to Bootstrap's 'rounded' class */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.certificate-slide-contain .img-fluid {
+  object-fit: contain;
+}

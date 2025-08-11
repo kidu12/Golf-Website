@@ -3,11 +3,11 @@ import React, { useRef, useState } from 'react';
 import '../styles/gallery.css';
 
 
-import garden1 from '../assets/images/hall_3.webp';
+import garden1 from '../assets/images/hall_1.webp';
 import garden2 from '../assets/images/hall_4.webp';
 import garden3 from '../assets/images/hall_2.webp';
-import crowd from '../assets/images/Conf-1.webp';
-import wedding from '../assets/images/Conf-2.webp';
+import crowd from '../assets/images/hall_8.webp';
+import wedding from '../assets/images/hall_1.webp';
 
 const images = [garden1, garden2, garden3, crowd, wedding];
 

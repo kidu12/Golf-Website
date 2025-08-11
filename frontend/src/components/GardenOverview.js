@@ -8,19 +8,15 @@ const GardenOverview = ({ language }) => {
   {language === 'en' ? 'Overview' : 'አጠቃላይ እይታ'}
 </h2>
 
-<p>
-  {language === 'en'
-    ? 'Our Garden Area & Grounds is a spacious, evergreen venue that remains lush year-round. Capable of hosting, 6,000 to 10,000 guests, it offers well-organized zones, ample parking, and robust security, ensuring a safe and successful event for all attendees.'
-    : 'የመኮንኖችች ክበብ አመቱን ሙሉ ምቹ፣ ለአይን ማራኪና አረንጓዴ ሁኖ የሚገኝ  ቦታ ሲሆን በዚህም ቦታ ከዝቅተኛ ቁጥር እስከ ከፍተኛ ቁጥር ማለትም ከ6000-10000 እንግዶችን ማስተናገድ የሚያስችል  ነው።በዚህም ቦታ ለጋብቻዎች፣ ለኮንሰርቶች እና ለፌስቲቫሎች ተስማሚ ነው።'
-  }
-</p>
+      <p>
+        {language === 'en'
+          ? 'The beautifully landscaped garden at Addis Ababa Golf Club stays green and vibrant throughout the year, offering a stunning outdoor venue for a wide range of events. With the capacity to host 10,000 to 15,000 guests, it’s an ideal setting for unforgettable weddings, lively concerts, cultural festivals, and more.'
+          : 'የመከላከያ ሰራዊት ፋውንዴሽን አዲስ አበባ  ጎልፍ ክለብ ዓመቱን ሙሉ  በሚያምር ሁኔታ  አረንጓዴ ለምለም ሆኖ የሚቆይ ከ650,000 ካሬ ሜትር ስፋት ያለው ሰፊ ቦታ ነው። በተጨማሪም ከ10,000-15,000 እንግዶችን ማስተናገድ የሚችለው ይህ ቦታ ለሰርግ ፕሮግራሞች፣ ለኮንሰርቶች እና ለፌስቲቫሎች ተስማሚ ነው።'}
+      </p>
 
-<h4 className="mt-4">
-  {language === 'en' ? 'Facilities & Features' : 'መሳሪያዎች እና ባህሪያት'}
-</h4>
-<div className="table-responsive">
-  <table className="table table-bordered mt-3">
-    <thead className="table-light">
+      <h4 class="fw-bold mt-5 mb-3">{language === 'en' ? 'Key Features' : 'ቁልፍ ገጽታዎች'}</h4>
+      <table className="table table-bordered mt-3">
+    <thead className="table-light"> 
       <tr>
         <th>{language === 'en' ? 'Feature' : 'አይነት'}</th>
         <th>{language === 'en' ? 'Description' : 'መግለጫ'}</th>
@@ -28,7 +24,7 @@ const GardenOverview = ({ language }) => {
     </thead>
     <tbody>
       <tr>
-        <td>{language === 'en' ? 'Year-round greenery' : 'በዓመቱ ሁል አረንጓዴነት'}</td>
+        <td>{language === 'en' ? 'Year-round greenery' : 'ከአመት አመት አረንጓደነት'}</td>
         <td>
           {language === 'en'
             ? 'Maintained to remain green 356 days a year with special care'
@@ -37,11 +33,10 @@ const GardenOverview = ({ language }) => {
         </td>
       </tr>
       <tr>
-        <td>{language === 'en' ? 'Capacity' : 'መጠን'}</td>
+        <td>{language === 'en' ? 'Capacity' : 'በቂ ስፍራ'}</td>
         <td>
           {language === 'en'
-            ? 'Can host up to 6000-10000 guests comfortably'
-            : 'ከ 6000-10000 እንግዶች ያአለምንም ችግር ማስተናገድ የሚችል'
+            ? 'Hosts 10,000 to 15,000 guests.' : 'ከ10,000 እስከ 15,000 እንግዶችን ያስተናግዳል'
           }
         </td>
       </tr>
@@ -74,7 +69,8 @@ const GardenOverview = ({ language }) => {
       </tr>
     </tbody>
   </table>
-      </div>
+     
+
     </section>
   );
 };

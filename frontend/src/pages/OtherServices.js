@@ -1,167 +1,91 @@
 import React from 'react';
-import cateringImg from '../assets/images/catring_2.webp';
-import bathImg from '../assets/images/Spa-7.webp';
-import shopsImg from '../assets/images/Shoping.webp';
-import conferenceImg from '../assets/images/hall_9.webp';
-import football from '../assets/images/Garden-1.webp';
-import parkingImg from '../assets/images/parking.webp';
+import BarberImg from '../assets/images/barber-shop.webp';
+import InteriorDecorationImg from '../assets/images/Decor_service.webp';
+import SpaImg from '../assets/images/Spa-7.webp';
+import PhotoShopImg from '../assets/images/Photo_sudio.webp';
+import '../styles/PartnerServices.css';
 
-
-const services = [
+const partnerServices = [
   {
     title: {
-      en: ' Event Catering',
-      am: ' የዝግጅት ምግብ አቅራቢ'
+      en: 'Photo Shop',
+      am: 'ፎቶ ሱቅ'
     },
-    image: cateringImg,
+    image: PhotoShopImg,
     description: {
-      en: `We provide full-service catering for weddings, birthdays, graduations, and corporate events. Our talented chefs create a range of dishes, from traditional Ethiopian cuisine to international favorites, all tailored to your preferences and budget
-
-Our services include coffee ceremonies, buffet setups, attentive server staff, and personalized menu planning, ensuring a delightful dining experience for every occasion.`,
-      am: `ለዝግጅት ምግብ አዘጋጅቶ የማቅረብ አገልግሎት
-ለጋብቻ፣ልደት፣ምረቃ እና ሌሎችም ዝግጅቶች በጥራትና በተመጣጣኝ ዋጋ ባህላዊና ዘመናዊ ምግብና መጠጦች ዝርዝር እንደ ምርጫዎ ከተሟላ መስንግዶ ጋር በተንጣለለ አዳራሻችን ፣በግቢያችን አረንጓዴ ቦታ ላይ እና ባሉበት ቦታ እናቀርባለን።`
+      en: `Our on-site Photo Shop offers professional photography services for any occasion, from portraits to event coverage.`,
+      am: `በግቢያችን ውስጥ የሚገኘው የፎቶ ሱቅ ለአጠቃላይ ዝግጅት የባለሙያ የፎቶግራፍ አገልግሎቶችን ያቀርባል። ከፎቶግራፎች እስከ ዝግጅት ሽፋን ድረስ።`
     }
   },
   {
     title: {
-      en: ' Moroccan Bath',
-      am: ' የሞሮኮ ባዝ'
+      en: 'Interior Decoration',
+      am: 'የውስጥ ማስጌጥ'
     },
-    image: bathImg,
+    image: InteriorDecorationImg,
     description: {
-      en: `Our Moroccan bath experience merges steam, scrubbing, and massage with natural oils and clays. This revitalizing treatment detoxifies the skin, enhances circulation, and leaves you feeling completely refreshed.
-
-Facilities feature private rooms, professional attendants, and premium hygiene standards, ensuring a relaxing and luxurious atmosphere.`,
-      am: `የእኛ ሞሮኮና ባዝ ዘመኑን የዋጁ ፅዱ እና ጥራት ያላቸው እቃዎችንና  የሰለጠኑ ባለሞያዎችን በመያዝ የተደራጀ ነው።
-
-               የሞሮኮ አገልግሎታችን :-
-👉 ምቹ እና ፅዱ የግል ክፍል
-👉 የሰለጠነ ባለሞያ
-👉 የዘመናዊ የተሟላ እቃ አለው።`
+      en: `Our Interior Decoration service provides expert design to transform your events into unforgettable experiences.`,
+      am: `የውስጥ ማስጌጥ አገልግሎታችን ዝግጅቶችዎን ወደማይረሱ ገጠመኞች ለመቀየር የባለሙያ ዲዛይን ያቀርባል።`
     }
   },
   {
-  title: {
-    en: ' Secure Parking',
-    am: ' ደህንነቱ የተጠበቀ ፓርኪንግ'
+    title: {
+      en: 'Sauna Bath & Massage',
+      am: 'ሳውና እና ማሳጅ'
+    },
+    image: SpaImg,
+    description: {
+      en: `We offer professional sauna and massage services to help you relax and rejuvenate. Advance booking is recommended.`,
+      am: `ዘና ለማለት እና ለማደስ የሚረዱዎትን የሳውና እና የማሳጅ አገልግሎቶችን እናቀርባለን። በቅድሚያ ቦታ ማስያዝ ይመከራል።`
+    }
   },
-  image: parkingImg, // make sure you import this image at the top
-  description: {
-    en: `Our secure parking area accommodates over 200–250 vehicles with 24/7 surveillance and gated access. Guests can enjoy peace of mind knowing their vehicles are safe.
-
-The spacious layout and organized slots ensure smooth entry, exit, and convenience for all visitors.`,
-    
-    am: `ደህንነቱ የተጠበቀ የመኪና ማቆሚያ ቦታ ከ 200-250 በላይ ተሽከርካሪዎችን 24 ሰአት በክትትል ይይዛል። እንግዶች ተሽከርካሪዎቻቸው ደህንነታቸው የተጠበቀ መሆኑን በማወቅ የአእምሮ ሰላም የሰጣቸዋል።
-
-ሰፊው አቀማመጥ እና የተደራጁ ቦታዎች ለሁሉም ጎብኝዎች ምቾት ይሆናሉ።`
+  {
+    title: {
+      en: 'Barber Shop',
+      am: 'የጸጉር ቤት'
+    },
+    image: BarberImg,
+    description: {
+      en: `Our on-site Barber Shop provides expert grooming services in a modern, comfortable setting. Appointments and walk-ins are welcome.`,
+      am: `በግቢያችን ውስጥ የሚገኘው የጸጉር ቤታችን በዘመናዊ እና ምቹ ሁኔታ ውስጥ የባለሙያ የውበት አገልግሎቶችን ይሰጣል። ቀጠሮ ወይም በቀጥታ መግባት ይችላሉ።`
+    }
   }
-},
-
-  {
-    title: {
-      en: ' On-site Shops',
-      am: ' ተያያዥ አገልግሎቶች'
-    },
-    image: shopsImg,
-    description: {
-      en: `Our shopping wing features:
-
-👉 Sports Jersey Shop: Offering authentic local and international kits.
-👉 Beauty Salon: Providing haircuts, facials, and grooming services.
-👉 Photo Studio: Specializing in instant portraits and event coverage.
-
-All shops are conveniently located within the club compound for easy access
-`,
-      am: `በግቢ ውስጥ ከስራችን ጋር ተያያዠነት ያለው አገልግሎት የሚሰጡ ያከራየናቸው ሱቆችም በክለባችን ግቢ ውስጥ አሉ።እነሱም:-
-👉 ፎቶ ቤት
-👉 የስፓርት ትጥቅ መሸጫ
-👉 የውበት ሳሎን ዋና ዋናዎቹ ናቸው።`
-    }
-  },
-  {
-    title: {
-      en: ' VIP Conference Rooms',
-      am: ' (VIP)የስብሰባ ክፍሎች'
-    },
-    image: conferenceImg,
-    description: {
-      en: `Designed for high-end meetings, our VIP conference rooms offer:
-👉 Modern Furnishings: Ensuring comfort and privacy.
-👉 Advanced Technology: Equipped with a projector, Wi-Fi, whiteboard, and microphone system.
-👉 Capacity: Accommodates up to 60 people.
-
-These rooms are perfect for business summits, team workshops, and executive sessions.`,
-      am: `ለከፍተኛ ስብሰባዎች የተነደፉ (VIP)የስብሰባ ክፍሎች የሚከተሉትን ያቀርባሉ:
-
-👉 ዘመናዊ ዕቃዎች እና ግላዊ ይዞታ
-👉 ፕሮጀክተር፣ ዋይፋይ፣ ነጭ ሰሌዳ እና የማይክራፎን ስርዓት
-👉 እስከ 60 ሰዎች የሚያስተናግድ
-
-ለንግድ ጉባኤዎች፣ የቡድን ስልጠናዎች እና የአስፈጻሚ ስብሰባዎች ተስማሚ።`
-    }
-  },
-  {
-  title: {
-    en: ' Football Field Rent',
-    am: ' የሜዳ ኪራይ'
-  },
-  image: football,
-  description: {
-    en: `Our football field is available for rent, making it ideal for:
-
-👉 Team Practices and local tournaments
-👉 Friendly Matches and sports events
-👉 School or Corporate Leagues
-👉 Special Sports Day Events
-
-The facility features ample space, well-maintained turf, locker rooms, and optional lighting for evening games.`,
-    am: `የእግር ኳስ ሜዳችን ለኪራይ ክፍት ሲሆን የሚከተሉትን ዝግጅቶቸ በበቂ ሁንታ ያስተናግዳል:
-
-👉 የቡድን ልምምዶች እና አስፖርታዊ ውድድሮች
-👉 የወዳጅነት ጨዋታዎች እና የስፖርት ዝግጅቶች
-👉 የትምህርት ቤት ወይም የኩባንያ ዝግጅቶች
-👉 የተለያዩ የንግድ እና ሌሎች በአረንጓዴ ሜዳ ላይ የሚከናወኑ ዝግጅቶችን ለማስተናገድ የሚያስችል ሰፊ እና ምቹ  የኪራይ ሜዳ አለን
-
-የሎከር ክፍሎች እና ለምሽት ጨዋታዎች አማራጭ መብራት እናቀርባል።`
-  }
-}
 ];
 
-const OtherServicesDetail = ({ language }) => {
-  return (
-    <>
-      <section className="container py-5">
-        <h1 className="fw-bold text-center mb-5">
-          {language === 'am' ? 'ሌሎች አገልግሎቶች በዝርዝር' : 'Other Services in Detail'}
-        </h1>
-
-        {services.map((service, index) => (
-          <div key={index} className="row align-items-center mb-5">
-            {/* IMAGE COLUMN */}
-            <div className="col-md-5 mb-3 mb-md-0">
-              <img
-                src={service.image}
-                alt={language === 'am' ? service.title.am : service.title.en}
-                className="img-fluid rounded shadow-sm"
-                style={{ height: '260px', objectFit: 'cover', width: '100%' }}
-              />
-            </div>
-
-            {/* TEXT COLUMN */}
-            <div className="col-md-7">
-              <h2 className="fw-bold mb-3">
-                {language === 'am' ? service.title.am : service.title.en}
-              </h2>
-              <p className="text-muted" style={{ whiteSpace: 'pre-line' }}>
-                {language === 'am' ? service.description.am : service.description.en}
-              </p>
-            </div>
+const PartnerServicesPage = ({ language }) => {
+  const renderServiceCard = (service, index) => (
+    <div key={index} className="col-md-6 col-lg-4 mb-5 d-flex align-items-stretch">
+      <div className="partner-service-card">
+        <div className="card-img-container">
+          <img
+            src={service.image}
+            alt={language === 'am' ? service.title.am : service.title.en}
+            className="card-img-top"
+          />
+          <div className="card-img-overlay">
+            <h5 className="card-title-overlay">{language === 'am' ? service.title.am : service.title.en}</h5>
           </div>
-        ))}
+        </div>
+        <div className="card-body">
+          <p className="card-text">{language === 'am' ? service.description.am : service.description.en}</p>
+        </div>
+      </div>
+    </div>
+  );
 
-      </section>
-    </>
+  return (
+    <section className="partner-services-section">
+      <div className="container">
+        <div className="text-center mb-5">
+          <h1 className="partner-services-title">{language === 'am' ? 'የአጋር አገልግሎቶች በኪራይ' : 'Partner Services by Rent'}</h1>
+          <p className="lead text-muted partner-services-subtitle">{language === 'am' ? 'በአጋሮቻችን የሚሰጡ ተጨማሪ አገልግሎቶች።' : 'Discover premium services offered by our trusted partners, available for rent to enhance your club experience.'}</p>
+        </div>
+        <div className="row justify-content-center">
+          {partnerServices.map(renderServiceCard)}
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default OtherServicesDetail;
+export default PartnerServicesPage;

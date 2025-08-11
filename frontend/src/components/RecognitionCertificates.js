@@ -11,8 +11,10 @@ import cert5 from '../assets/images/certificate_5.webp';
 import cert1 from '../assets/images/certificate_1.webp';
 import cert3 from '../assets/images/certificate_3.webp';
 import cert4 from '../assets/images/certificate_4.webp';
+import cert6 from '../assets/images/certificate_6.webp';
+import cert7   from '../assets/images/certificate_7.webp';
 
-const images = [cert1, cert2, cert3, cert4, cert5];
+const images = [cert7, cert1, cert2, cert3, cert4, cert5, cert6];
 
 Modal.setAppElement('#root');
 
@@ -44,7 +46,7 @@ const RecognitionCertificates = ({ language }) => {
           {images.map((img, idx) => (
             <SwiperSlide key={idx}>
               <div
-                className="certificate-slide"
+                className={`certificate-slide ${idx === 0 ? 'certificate-slide-contain' : ''}`}
                 onClick={() => openModal(img)}
               >
                 <img

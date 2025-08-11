@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import garden1 from '../assets/images/hall_9.webp';
-import garden2 from '../assets/images/hall_2.webp';
-import garden3 from '../assets/images/hall_8.webp';
+import garden1 from '../assets/images/hall_1.webp';
+import garden2 from '../assets/images/hall_5.webp';
+import garden3 from '../assets/images/hall_3.webp';
 
 const images = [garden1, garden2, garden3];
 
-const GardenHero = ({ language }) => {
+const ConferenceHero = ({ language }) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -28,12 +28,12 @@ const GardenHero = ({ language }) => {
       <div className="overlay position-absolute w-100 h-100  opacity-50"></div>
       <div className="container position-relative z-2">
         <h1 className="display-4 fw-bold text-white">
-  {language === 'en' ? 'Conference Hall' : 'የኮንፈረንስ አዳራሽ'}
+  {language === 'en' ? 'VIP Conference Room' : 'የመሰብሰቢያ አዳራሽ'}
 </h1>
 <p className="lead mt-2">
   {language === 'en' 
-    ? 'Fully equipped halls for weddings, meetings, and celebrations. Capacity from 60 to 1000 people.' 
-    : 'ለጋብቻ፣ ስብሰባ እና በዓላት የተሟሉ መሣሪያዎች ያሏቸው አዳራሾች። ከ60 እስከ 1000 ሰዎች የሚያስተናግድ።'
+    ? 'An ideal space for high-level meetings, trainings, and private events.' 
+    : 'ፍላጎታችሁ ለየት ባለ ሁኔታ ለሚዘጋጅ ስብሰባ፣ ስልጠናና የግል ጉዳዮቻችሁን የምትወያዩበት የመሰብሰቢያ እና የመወያያ ቦታ ሲሆን የስብሰባ ክፍላችን አለላችሁ።'
   }
 </p>
 
@@ -42,7 +42,7 @@ const GardenHero = ({ language }) => {
   );
 };
 
-export default GardenHero;
+export default ConferenceHero;
 
 
 

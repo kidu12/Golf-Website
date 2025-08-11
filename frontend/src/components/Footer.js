@@ -13,7 +13,7 @@ const Footer = ({ language = 'en' }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('${process.env.REACT_APP_API_URL}/api/testimonials', {
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/testimonials`, {
         name: testimonial.name,
         message: testimonial.message,
       });
@@ -35,19 +35,31 @@ const Footer = ({ language = 'en' }) => {
         <div className="row text-md-left">
       
 
-          {/* Our Services */}
+          {/* Core Services */}
           <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
             <h5 className="text-uppercase mb-4">
-              {language === 'am' ? 'የምንሰጣቸው የአገልግሎቶች አይነቶች' : 'Our Services'}
+              {language === 'am' ? 'ዋና ዋና አገልግሎቶች' : 'Core Services'}
             </h5>
-            <p><a href="/spa" className="footer-link">{language === 'am' ? 'የስፓ እና ማሳጅ አገልግሎት' : 'Spa & Massage'}</a></p>
-            <p><a href="/gym" className="footer-link">{language === 'am' ? 'ጂምናዚየም' : 'Gymnasium'}</a></p>
-            <p><a href="/tennis" className="footer-link">{language === 'am' ? 'የሜዳ ቴኒስ' : 'Ground Tennis'}</a></p>
-            <p><a href="/conference" className="footer-link">{language === 'am' ? 'የዝግጅት አዳራሽ' : 'Event Hall'}</a></p>
-            <p><a href="/bar" className="footer-link">{language === 'en' ? 'Restaurant & Kitchen' : 'ባር እና ሬስቶራንት'}</a></p>
-            <p><a href="/garden" className="footer-link">{language === 'en' ? 'Garden & Grounds' : 'አረንጓዴ አካባቢ'}</a></p>
-            <p><a href="/other-services" className="footer-link">{language === 'en' ? 'Others' : 'ሌሎች'}</a></p>
+            <p><a href="/tennis" className="footer-link">{language === 'am' ? 'የጎልፍ ስፖርት' : 'Golf Course'}</a></p>
+            <p><a href="/bar" className="footer-link">{language === 'am' ? 'ባር እና ሬስቶራንት' : 'Bar & Restaurant'}</a></p>
+            <p><a href="/gym" className="footer-link">{language === 'am' ? 'ፊትነስ እና ጂም' : 'Fitness & Gym'}</a></p>
+            <p><a href="/conference" className="footer-link">{language === 'am' ? 'አዳራሽ አገልግሎት' : 'VIP Conference Room'}</a></p>
+            <p><a href="/spa" className="footer-link">{language === 'am' ? 'ክፍል አገልግሎት' : 'Room Service'}</a></p>
+            <p><a href="/garden" className="footer-link">{language === 'am' ? 'አረንጓዴ ስፍራ' : 'Garden & Grounds'}</a></p>
+          </div>
 
+          {/* Additional Services */}
+          <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 className="text-uppercase mb-4">
+              {language === 'am' ? 'ተጨማሪ አገልግሎቶች' : 'Additional Services'}
+            </h5>
+            <p><a href="/juice-bar" className="footer-link">{language === 'am' ? 'የፍራፍሬ ጭማቂ ባር' : 'Juice Bar'}</a></p>
+            <p><a href="/childrens-playground" className="footer-link">{language === 'am' ? 'የልጆች መጫወቻ' : 'Childrens Playground'}</a></p>
+            <p><a href="/car-wash" className="footer-link">{language === 'am' ? 'የመኪና ማጠቢያ' : 'Car Wash'}</a></p>
+            <p><a href="/coffee-ceremony" className="footer-link">{language === 'am' ? 'የቡና ሥነ-ስርዓት' : 'Coffee Ceremony'}</a></p>
+            <p><a href="/catering-service" className="footer-link">{language === 'am' ? 'የምግብ አቅርቦት አገልግሎት' : 'Catering Service'}</a></p>
+            <p><a href="/services/exhibitions-and-bazaars" className="footer-link">{language === 'am' ? 'ኤግዚቢሽኖች እና ባዛሮች' : 'Exhibitions & Bazaars'}</a></p>
+            <p><a href="/other-services" className="footer-link">{language === 'am' ? 'ሌሎች' : 'Others'}</a></p>
           </div>
 
           {/* Contact Info */}
@@ -55,10 +67,23 @@ const Footer = ({ language = 'en' }) => {
             <h5 className="text-uppercase mb-4">
               {language === 'am' ? 'ያግኙን' : 'Contact Us'}
             </h5>
-            <p className="mb-1">{language === 'am' ? 'ጦር ሃይሎቸ, አዲስ አበባ' : 'Torhailoch, Addis Ababa'}</p>
-            <p className="mb-1"><a href="tel:+251926555599" className="footer-link">+251 92 655 5599</a></p>
-            <p className="mb-1"><a href="tel:+251113717317" className="footer-link">+251 11 371 7317</a></p>
-            <p className="mb-3"><a href="tel:+251113717318" className="footer-link">+251 11 371 7318</a></p>
+            <p className="mb-1">{language === 'am' ? 'ጦር ሃይሎች, አዲስ አበባ' : 'Tor Hailoch, Addis Ababa'}</p>
+             <p className="contact-item">
+              <span>{language === 'am' ? 'ጎልፍ:' : 'For Golf Course:'}</span>
+              <a href="tel:+251913685564" className="footer-link">+251 913 685564</a>
+            </p>
+             <p className="contact-item">
+              <span>{language === 'am' ? 'ሆቴል:' : 'For Hotel,Bedroom & Other Service:'}</span>
+              <a href="tel:+251113201893" className="footer-link">+251 113 201893</a>
+            </p>
+            <p className="contact-item">
+              <span>{language === 'am' ? 'ዝግጅቶች:' : 'For Events:'}</span>
+              <a href="tel:+251911612059" className="footer-link">+251 911 612059</a>
+            </p>
+            <p className="contact-item">
+              <span>{language === 'am' ? 'ማርኬቲንግ:' : 'For Marketing MGT:'}</span>
+              <a href="tel:+251932143333" className="footer-link">+251 932 143333</a>
+            </p>
             <p><a href="/contact" className="footer-link">{language === 'am' ? 'ለበለጠ መረጃ' : 'For more info'}</a></p>
             <h6 className="fw-bold">{language === 'am' ? 'የስራ ሰዓት' : 'Opening Hours'}</h6>
             <p>{language === 'am' ? 'ሰኞ – እሁድ' : 'Monday – Sunday'}</p>
@@ -119,7 +144,7 @@ const Footer = ({ language = 'en' }) => {
         <div className="row mt-4">
           <div className="col text-center">
             <div className="d-flex justify-content-center gap-4 footer-social-icon">
-              <a href="https://web.facebook.com/p/EFDR-Defence-Force-Officers-Club-100064034525695/?_rdc=1&_rdr#" className="text-white fs-4"><FaFacebook /></a>
+              <a href="#" className="text-white fs-4"><FaFacebook /></a>
               <a href="#" className="text-white fs-4"><FaInstagram /></a>
               <a href="#" className="text-white fs-4"><FaYoutube /></a>
             </div>
@@ -132,8 +157,8 @@ const Footer = ({ language = 'en' }) => {
           <div className="col">
             <p className="mb-0">
               &copy; {new Date().getFullYear()} {language === 'am'
-                ? 'የኢትዮጵያ መከላከያ ኃይል ኦፊሰር ክበብ መብት የተጠበቀ ነው።'
-                : 'Ethiopian Defense Force Officers Club. All rights reserved.'}
+                ? 'የአዲስ አበባ ጎልፍ ክለብ መብቱ በህግ የተጠበቀ ነው።'
+                : 'Addis Ababa Golf Club. All rights reserved.'}
             </p>
           </div>
         </div>

@@ -2,29 +2,19 @@ import React from 'react';
 
 const GymOverview = ({ language }) => {
   return (
-    <section className="container py-5">
-     <h2 className="fw-bold mb-4">
-  {language === 'am' ? 'አጠቃላይ እይታ' : 'Overview'}
+    <section className="container my-5">
+      <div className="container">
+        <h2 className="fw-bold mb-4">
+        {language === 'en' ? 'Overview' : 'አጠቃላይ እይታ'}
 </h2>
-
-<p>
-  {language === 'am'
-    ? 'ጂም ማዕከላቸነ በዘመናዊ ማሽኖች ለካርዲዮ ፣ ለጥንካሬ ስልጠና የተዘጋጀ ቦታዎች አሉት። ለሁሉም ደረጃዎች የአካል ብቃት ግቦች ለመድረስ በሚረዱ የሰለጠኑ ባለሞያዎች ድጋፍ የሚያደርጉበት ቦታ አዘጋጅተናል።'
-    : 'Our Gym Center is fully outfitted with cutting-edge machines and dedicated areas for cardio, strength, and flexibility training. It caters to fitness enthusiasts of all levels, with guidance from certified professional trainers.'}
-</p>
-
-<p>
-  {language === 'am'
-    ? 'እንግዶች ንፁህ፣ የተደራጁ ቦታዎችን ከወንድ እና ከሴት የተለዩ ሻወሪዎች፣ ትኩስ እና ቀዝቃዛ ውሃ እና ደህንነቱ የተጠበቀ ሎከሮች ይኖራቸዋል። ጅማቸን ስልጠናዎትን የሚያስቀጥል ጂም ማዕከል ለእርስዎ የሚመች አካባቢን ያቀርባል።'
-    : 'Guests can appreciate a clean and well-organized environment, featuring gender-separated showers, access to hot and cold water, and secure lockers. Whether you’re beginning your fitness journey or maintaining a routine, our Gym Center provides the perfect atmosphere to meet your needsThe Officers Club boasts stunning garden grounds that remain vibrant and lush throughout the year, providing a picturesque backdrop for outdoor events. With the capacity to accommodate 6,000 to 10,000 guests, this venue is ideal for weddings, concerts, and festivals.'}
-</p>
-
-<h4 className="mt-4">
-  {language === 'am' ? 'መሳሪያዎች' : 'Facilities'}
-</h4>
-
-<div className="table-responsive">
-  <table className="table table-bordered mt-3">
+          <p>
+            {language === 'en'
+              ? 'Our state-of-the-art gym at Addis Ababa Golf Club is designed to meet the fitness needs of every guest. It features advanced workout equipment, free weights, and dedicated zones for both cardio and strength training — providing a complete and energizing fitness experience.'
+              : 'በስፖርት ሳይንስ  በሰለጠኑ የድርጅታችን ሰራተኞች በመታገዝ በአረንጓዴ የተሸፈነ ማራኪ ተፈጥሮን እየተመለከቱ የተሟላ  ስፓርታዊ እንቅስቃሴ ለማድረግ ምቹ የሆነ የጅም አገልግሎት በተመጣጣኝ ዋጋ መጠቀም ይችላሉ።'}
+          </p>
+      <br />
+          <h3 className="fw-bold mb-4">{language === 'en' ? 'Key Features' : 'ቁልፍ ባህሪዎች'}</h3>
+          <table className="table table-bordered mt-3">
     <thead className="table-light">
       <tr>
         <th>{language === 'am' ? 'ዋና መለያዎች' : 'Feature'}</th>
