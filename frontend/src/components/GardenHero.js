@@ -25,19 +25,7 @@ const GardenHero = ({ language }) => {
         transition: 'background-image 1s ease-in-out'
       }}
     >
-      <div className="overlay position-absolute w-100 h-100 opacity-50"></div>
-      <div className="container position-relative z-2">
-       <h1 className="display-4 fw-bold text-white">
-  {language === 'en' ? 'Garden Area' : 'አረንጓዴ ስፍራ'}
-</h1>
-<p className="lead mt-2">
-  {language === 'en'
-    ? 'A stunning outdoor venue for unforgettable weddings, lively concerts, and cultural festivals.'
-    : 'ለማይረሱ የሰርግ ስነ-ስርዓቶች፣ ለደማቅ ኮንሰርቶች እና ለባህላዊ ፌስቲቫሎች የሚሆን አስደናቂ የውጪ ቦታ።'
-  }
-</p>
 
-      </div>
     </section>
   );
 };

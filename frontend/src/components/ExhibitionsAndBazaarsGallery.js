@@ -1,37 +1,35 @@
 import React, { useRef, useState } from 'react';
 import '../styles/gallery.css';
 
-import img1 from '../assets/images/event_01.webp';
-import img2 from '../assets/images/event_02.webp';
-import img3 from '../assets/images/event_04.webp';
-import img4 from '../assets/images/event_03.webp';
-import img5 from '../assets/images/event_06.webp';
-import img6 from '../assets/images//event_07.webp';
+// Import your gallery images here
+import image1 from '../assets/images/event_05.webp';
+import image2 from '../assets/images/event_06.webp';
+import image3 from '../assets/images/event_07.webp';
+import image4 from '../assets/images/event_08.webp';
 
-const images = [img1, img2, img3, img4, img5, img6];
+const images = [image1, image2, image3, image4];
 
 const ExhibitionsAndBazaarsGallery = ({ language }) => {
   const scrollRef = useRef(null);
   const [modalImage, setModalImage] = useState(null);
 
-  const scroll = (dir) => {
-    scrollRef.current.scrollBy({ left: dir === 'left' ? -400 : 400, behavior: 'smooth' });
+  const scroll = (direction) => {
+    const scrollAmount = 400;
+    scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
   };
 
-  const title = language === 'am' ? 'የእኛ ማዕከለ-ስዕላት' : 'Our Gallery';
-
   return (
-    <section className="gallery-wrapper py-5 bg-dark text-white">
+    <section className="gallery-wrapper py-5 bg-dark text-white" data-aos="fade-up">
       <div className="container">
         <h2 className="fw-bold mb-4 text-center text-white">
-          {title}
+          {language === 'am' ? 'የኤግዚቢሽን እና ባዛር ጋለሪ' : 'Exhibitions & Bazaars Gallery'}
         </h2>
         <div className="gallery-scroll-wrapper">
           <button className="scroll-btn left" onClick={() => scroll('left')}>&lt;</button>
           <div className="gallery-scroll" ref={scrollRef}>
-            {images.map((img, i) => (
-              <div className="gallery-image-wrapper" key={i} onClick={() => setModalImage(img)}>
-                <img src={img} className="gallery-image" alt={`Gallery image ${i + 1}`} />
+            {images.map((src, index) => (
+              <div className="gallery-image-wrapper" key={index} onClick={() => setModalImage(src)}>
+                <img src={src} className="gallery-image" alt={`Exhibition or Bazaar ${index + 1}`} />
               </div>
             ))}
           </div>
@@ -39,6 +37,7 @@ const ExhibitionsAndBazaarsGallery = ({ language }) => {
         </div>
       </div>
 
+      {/* Fullscreen modal */}
       {modalImage && (
         <div className="image-modal" onClick={() => setModalImage(null)}>
           <img src={modalImage} className="modal-img" alt="preview" />

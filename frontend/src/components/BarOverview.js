@@ -2,7 +2,16 @@ import React from 'react';
 
 const BarOverview = ({ language }) => {
   return (
-    <section className="container py-5">
+    <section className="py-5 bg-light" data-aos="fade-up">
+      <div className="container">
+        <h1 className="display-4 fw-bold text-black text-center">
+          {language === 'am' ? 'ባር እና ሬስቶራንት' : 'Bar & Restaurant'}
+        </h1>
+        <p className="lead mt-2 text-center">
+          {language === 'am' 
+            ? 'የኢትዮጵያን ባህላዊ ጣዕሞች ከተለያዩ ዓለም አቀፍ ምግቦችና መጠጦች በጥራት እና በተመጣጣኝ ዋጋ ማጣጣም ይችላሉ።' 
+            : 'Indulge in a menu that blends authentic Ethiopian flavors with a rich variety of international dishes.'}
+        </p>
  <h2 className="fw-bold mb-4">
   {language === 'en' ? 'Overview' : 'አጠቃላይ እይታ'}
 </h2>
@@ -26,7 +35,7 @@ const BarOverview = ({ language }) => {
         <td>{language === 'am' ? 'ንፁህ፣ ዘመናዊ እና በባለሙያ ሰራተኞች የተሟላ' : 'Clean, modern, fully equipped with professional staff'}</td>
       </tr>
       <tr>
-        <td>{language === 'am' ? 'የምግብና አይነቶች' : 'Menu'}</td>
+        <td>{language === 'am' ? 'የምግብ አይነቶች' : 'Menu'}</td>
         <td>{language === 'am' ? 'ባህላዊ የኢትዮጵያ እና ዓለም አቀፍ ምግቦች' : 'Traditional Ethiopian & International cuisine'}</td>
       </tr>
       <tr>
@@ -44,7 +53,7 @@ const BarOverview = ({ language }) => {
     </tbody>
   </table>
 
-
+      </div>
     </section>
   );
 };

@@ -2,7 +2,18 @@ import React from 'react';
 
 const CoffeeCeremonyOverview = ({ language }) => {
   return (
-    <section className="container py-5">
+    <section className="py-5 bg-light" data-aos="fade-up">
+      <div className="container">
+        <h1 className="display-4 fw-bold text-black text-center">
+          {language === 'am' ? 'ባህላዊ የኢትዮጵያ ቡና አፈላል ስነ ስርዓት' : 'Traditional Ethiopian Coffee Ceremony'}
+        </h1>
+        <p className="lead mt-2 text-center">
+          {language === 'am' 
+            ? 'ልዩ እና እውነተኛ ተሞክሮ'
+            : 'A Unique and Authentic Experience'}
+        </p>
+      </div>
+      <div className="container py-5">
       <h2 className="fw-bold mb-4">
         {language === 'en' ? 'Overview' : 'አጠቃላይ እይታ'}
       </h2>
@@ -39,6 +50,7 @@ const CoffeeCeremonyOverview = ({ language }) => {
           </tr>
         </tbody>
       </table>
+      </div>
     </section>
   );
 };

@@ -113,8 +113,8 @@ const MembershipContent = ({ language }) => {
 
       <section className='membership-contact-section py-5 bg-light'>
         <div className='container text-center'>
-          <h2 className='fw-bold'>{selected.contactTitle}</h2>
-          <p className='lead my-4'>{selected.contactText}</p>
+          <h2 className='fw-bold text-black'>{selected.contactTitle}</h2>
+          <p className='lead my-4 text-black'>{selected.contactText}</p>
           <Link to='/contact' className='btn btn-primary btn-lg'>
             {selected.contactButton}
           </Link>

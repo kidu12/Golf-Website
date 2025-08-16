@@ -27,17 +27,7 @@ const CoffeeCeremonyHero = ({ language }) => {
         position: 'relative',
       }}
     >
-      <div className="overlay position-absolute w-100 h-100 opacity-50"></div>
-      <div className="container position-relative z-2">
-        <h1 className="display-4 fw-bold text-white ">
-          {language === 'am' ? 'ባህላዊ የኢትዮጵያ ቡና አፈላል ስነ ስርዓት' : 'Traditional Ethiopian Coffee Ceremony'}
-        </h1>
-        <p className="lead mt-2">
-          {language === 'am' 
-            ? 'ልዩ እና እውነተኛ ተሞክሮ'
-            : 'A Unique and Authentic Experience'}
-        </p>
-      </div>
+
     </section>
   );
 };

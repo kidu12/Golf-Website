@@ -2,7 +2,18 @@ import React from 'react';
 
 const CateringServiceOverview = ({ language }) => {
   return (
-    <section className="container py-5">
+    <section className="py-5 bg-light" data-aos="fade-up">
+      <div className="container">
+        <h1 className="display-4 fw-bold text-black text-center">
+          {language === 'am' ? 'የቤት ውስጥ እና የውጪ የምግብ አቅርቦት አገልግሎት' : 'Indoor and Outdoor Catering Service'}
+        </h1>
+        <p className="lead mt-2 text-center">
+          {language === 'am' 
+            ? 'እንከን የለሽ እና ከፍተኛ ጥራት ያለው የመመገቢያ ተሞክሮ'
+            : 'A Seamless and High-Quality Dining Experience'}
+        </p>
+      </div>
+      <div className="container py-5">
       <h2 className="fw-bold mb-4">
         {language === 'en' ? 'Overview' : 'አጠቃላይ እይታ'}
       </h2>
@@ -39,6 +50,7 @@ const CateringServiceOverview = ({ language }) => {
           </tr>
         </tbody>
       </table>
+      </div>
     </section>
   );
 };

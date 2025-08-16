@@ -2,7 +2,17 @@ import React from 'react';
 
 const GolfOverview = ({ language }) => {
   return (
-<section className="container py-5">
+<section className="py-5 bg-light" data-aos="fade-up">
+    <div className="container">
+      <h1 className="display-4 fw-bold text-black text-center">
+        {language === 'en' ? 'Golf Course' : 'የጎልፍ ስፓርት አገልግሎት'}
+      </h1>
+      <p className="lead mt-2 text-center">
+        {language === 'en' 
+          ? 'Addis Ababa Golf Club A fulfilling experience for players of all skill levels..' 
+          : 'አዲስ አበባ ጎልፍ ክለብለሁሉም የክህሎት ደረጃዎች ላሉ ተጫዋቾች አርኪ ተሞክሮ።'
+        }
+      </p>
   <h2 className="fw-bold mb-4">
     {language === 'en' ? 'Overview' : 'አጠቃላይ እይታ'}
   </h2>
@@ -27,6 +37,7 @@ const GolfOverview = ({ language }) => {
       <strong>{language === 'en' ? 'Private/Resort Course:' : 'የግል/ሪዞርት ኮርስ:'}</strong> {language === 'en' ? 'An exclusive and serene golfing experience.' : 'ልዩ እና የተረጋጋ የጎልፍ ተሞክሮ።'}
     </li>
   </ul>
+    </div>
     </section>
   );
 }

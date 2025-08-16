@@ -25,17 +25,7 @@ const GymHero = ({ language }) => {
         position: 'relative'
       }}
     >
-      <div className="overlay position-absolute w-100 h-100  opacity-50"></div>
-      <div className="container position-relative z-2">
-        <h1 className="display-4 fw-bold text-white">
-          {language === 'en' ? 'Gymnasium' : 'ጂምናዚየም'}
-        </h1>
-        <p className="lead mt-2">
-          {language === 'en' 
-            ? 'A complete and energizing fitness experience.' 
-            : 'የተሟላ እና አነቃቂ የአካል ብቃት ተሞክሮ።'}
-        </p>
-      </div>
+
     </section>
   );
 };

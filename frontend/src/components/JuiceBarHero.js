@@ -27,17 +27,7 @@ const JuiceBarHero = ({ language }) => {
         position: 'relative',
       }}
     >
-      <div className="overlay position-absolute w-100 h-100 opacity-50"></div>
-      <div className="container position-relative z-2">
-        <h1 className="display-4 fw-bold text-white ">
-          {language === 'am' ? 'የፍራፍሬ ጭማቂ ባር' : 'Juice Bar'}
-        </h1>
-        <p className="lead mt-2">
-          {language === 'am' 
-            ? 'ጤናማ እና ትኩስ'
-            : 'Healthy and Refreshing'}
-        </p>
-      </div>
+
     </section>
   );
 };

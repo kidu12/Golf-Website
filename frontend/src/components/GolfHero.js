@@ -29,18 +29,7 @@ const GolfHero = ({ language }) => {
         overflow: 'hidden',
       }}
     >
-      <div className="overlay" style={{ zIndex: 1 }}></div>
-      <div className="container text-center" style={{ zIndex: 2 }}>
-      <h1 className="display-4 fw-bold text-white">
-      {language === 'en' ? 'Golf Course' : 'የጎልፍ ሜዳ'}
-</h1>
-<p className="lead mt-2">
-  {language === 'en' 
-    ? 'Addis Ababa Golf Club A fulfilling experience for players of all skill levels..' 
-    : 'አዲስ አበባ ጎልፍ ክለብለሁሉም የክህሎት ደረጃዎች ላሉ ተጫዋቾች አርኪ ተሞክሮ።'
-  }
-</p>
-      </div>
+
     </div>
   );
 };

@@ -99,7 +99,7 @@ const OtherServices = ({ language }) => {
           ))}
         </div>
         <div className="text-center mt-4">
-          <Link to="/other-services" className="btn btn-other-services mt-4">
+          <Link to="/services/other-services" className="btn btn-other-services mt-4">
             {language === 'en' 
               ? 'Learn More About These Services' 
               : 'ስለእነዚህ አገልግሎቶች ተጨማሪ ይወቁ'}

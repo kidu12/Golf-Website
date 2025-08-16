@@ -6,7 +6,10 @@ import { FaGlobe } from 'react-icons/fa';
 
 const Header = ({ language, onLanguageChange }) => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+  const [isServicesOpen, setServicesOpen] = useState(false);
+
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+  const toggleServices = () => setServicesOpen(!isServicesOpen);
 
   const navText = {
     home: { en: 'Home', am: 'መነሻ ገጽ' },
@@ -15,31 +18,31 @@ const Header = ({ language, onLanguageChange }) => {
     membership: { en: 'Membership', am: 'አባልነት' },
     news: { en: 'Event and News', am: 'መረጃ እና ዜና' },
     contact: { en: 'Contact Us', am: 'ያግኙን' },
-    brand: { en: 'Golf Club', am: 'ጎልፍ ክለብ' },
+    brand: { en: 'Officers Club', am: 'መኮንኖች ክበበብ' },
   };
 
   const serviceLinks = [
-    { path: '/tennis', text: { en: 'Golf Course', am: 'የጎልፍ ስፖርት'} },
-    { path: '/bar', text: { en: 'Bar & Restaurant', am: 'ባር እና ሬስቶራንት'} },
-    { path: '/garden', text: { en: 'Garden & Grounds', am: 'አረንጓዴ ስፍራ'} },
-    { path: '/spa', text: { en: 'Room Service', am: 'ክፍል አገልግሎት'} },
-    { path: '/gym', text: { en: 'Fitness & Gym', am: 'ፊትነስ እና ጂም'} },
-    { path: '/conference', text: { en: 'VIP Conference Room', am: 'የመሰብሰቢያ አዳራሽ'} },
-    { path: '/juice-bar', text: { en: 'Juice Bar', am: 'የፍራፍሬ ጭማቂ ባር'} },
-    { path: '/childrens-playground', text: { en: 'Childrens Playground', am: 'የልጆች መጫወቻ'} },
-    { path: '/car-wash', text: { en: 'Car Wash', am: 'የመኪና ማጠቢያ'} },
-    { path: '/coffee-ceremony', text: { en: 'Coffee Ceremony', am: 'የቡና ሥነ-ስርዓት'} },
-    { path: '/catering-service', text: { en: 'Catering Service', am: 'የምግብ አቅርቦት አገልግሎት'} },
-    { path: '/services/exhibitions-and-bazaars', text: { en: 'Exhibitions & Bazaars', am: 'ኤግዚቢሽኖች እና ባዛሮች'} },
-    { path: '/other-services', text: { en: 'Others', am: 'ሌሎች' } },
+    { path: '/services/tennis-court', text: { en: 'Golf Course', am: 'የጎልፍ ስፓርት አገልግሎት' } },
+    { path: '/services/bar-restaurant', text: { en: 'Bar & Restaurant', am: 'ባር እና ሬስቶራንት' } },
+    { path: '/services/garden-grounds', text: { en: 'Garden & Grounds', am: 'አረንጓዴ ስፍራ(ለተላያዩ ኩነቶች ለማዘጋጀት)' } },
+    { path: '/services/spa-steam-center', text: { en: 'Room Service', am: 'የተሟላ የመኝታ አገልግሎት' } },
+    { path: '/services/gym-center', text: { en: 'Fitness & Gym', am: 'የጂምናዚየም አገልግሎት' } },
+    { path: '/services/conference-hall', text: { en: 'VIP Conference Room', am: 'የስብሰባ አዳራሽ አገልግሎት' } },
+    { path: '/services/juice-bar', text: { en: 'Juice Bar', am: 'የጁስ ባር' } },
+    { path: '/services/childrens-playground', text: { en: 'Childrens Playground', am: 'የልጆች መጫወቻ ቦታ' } },
+    { path: '/services/car-wash', text: { en: 'Car Wash', am: 'የመኪና ማጠቢያ' } },
+    { path: '/services/coffee-ceremony', text: { en: 'Coffee Ceremony', am: 'ለባህላዊ የቡና ሥነ-ስርዓት' } },
+    { path: '/services/catering', text: { en: 'Catering Service', am: 'የተሟላ የምግብ አቅርቦት' } },
+    { path: '/services/exhibitions-bazaars', text: { en: 'Exhibitions & Bazaars', am: 'ኤግዚቢሽኖች እና ባዛሮች' } },
+    { path: '/services/other-services', text: { en: 'Others', am: 'ሌሎች' } },
   ];
 
-    return (
+  return (
     <nav className="navbar navbar-expand-lg custom-navbar">
       <div className="container-fluid">
         <div className="d-lg-none w-100 d-flex align-items-center justify-content-between mobile-header-row">
           <NavLink className="navbar-brand mobile-logo-left" to="/">
-            <img src={logo} alt="Addis Ababa Golf Club Logo" style={{ width: '60px', height: '50px', objectFit: 'cover' }} loading="lazy" className="rounded-circle mobile-logo" />
+            <img src={logo} alt="Officers Club Logo" height="50" loading="lazy" className="rounded-circle mobile-logo" />
           </NavLink>
           <div className="d-flex align-items-center gap-2">
             <button
@@ -71,7 +74,7 @@ const Header = ({ language, onLanguageChange }) => {
 
             <div className="header-logo-center">
               <NavLink className="navbar-brand" to="/">
-              <img src={logo} alt="Addis Ababa Golf Club Logo" style={{ width: '60px', height: '60px', objectFit: 'cover' }} loading="lazy" 
+              <img src={logo} alt="Officers Club Logo" height="60"   loading="lazy" 
  className="rounded-circle" />
  </NavLink>
  
@@ -102,12 +105,12 @@ const Header = ({ language, onLanguageChange }) => {
               <li className="nav-item"><NavLink to="/" className="nav-link custom-nav-link" onClick={handleNavCollapse} end>{navText.home[language]}</NavLink></li>
               <li className="nav-item"><NavLink to="/about" className="nav-link custom-nav-link" onClick={handleNavCollapse} end>{navText.about[language]}</NavLink></li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle custom-nav-link" href="#" id="mobileServicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a className="nav-link dropdown-toggle custom-nav-link" href="#" onClick={toggleServices} aria-expanded={isServicesOpen}>
                   {navText.services[language]}
                 </a>
-                <ul className="dropdown-menu" aria-labelledby="mobileServicesDropdown">
+                <ul className={`dropdown-menu ${isServicesOpen ? 'show' : ''}`}>
                   {serviceLinks.map((link, index) => (
-                    <li key={`m-service-${index}`}><NavLink className="dropdown-item" to={link.path} onClick={handleNavCollapse}>{link.text[language]}</NavLink></li>
+                    <li key={`m-service-${index}`}><NavLink className="dropdown-item" to={link.path} onClick={() => { handleNavCollapse(); setServicesOpen(false); }}>{link.text[language]}</NavLink></li>
                   ))}
                 </ul>
               </li>

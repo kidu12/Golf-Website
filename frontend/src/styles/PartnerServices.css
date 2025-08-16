@@ -1,93 +1,55 @@
-/* src/styles/PartnerServices.css */
-
-.partner-services-section {
-  padding: 80px 0;
+.partner-services-container {
+  padding: 4rem 2rem;
+  text-align: center;
   background-color: #f9f9f9;
 }
 
 .partner-services-title {
-  font-weight: 700;
+  font-size: 2.5rem;
   color: #333;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-.partner-services-subtitle {
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  color: #666;
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
 }
 
-.partner-service-card {
-  border: none;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+.partner-item {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
-.partner-service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+.partner-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.partner-service-card .card-img-container {
-  position: relative;
-  height: 250px;
+.partner-item img {
+  max-width: 150px;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
 }
 
-.partner-service-card .card-img-top {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.partner-item:hover img {
+  filter: grayscale(0%);
 }
 
-.partner-service-card .card-img-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
-  display: flex;
-  align-items: flex-end;
-  padding: 20px;
-  color: #fff;
-}
+@media (max-width: 768px) {
+  .partner-services-title {
+    font-size: 2rem;
+  }
 
-.partner-service-card .card-title-overlay {
-  font-weight: 600;
-  font-size: 1.5rem;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
-
-.partner-service-card .card-body {
-  padding: 25px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.partner-service-card .card-text {
-  flex-grow: 1;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.partner-service-card .btn-contact-details {
-  background-color: #4D784E;
-  color: #fff;
-  border: none;
-  border-radius: 50px;
-  padding: 10px 25px;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-  align-self: flex-start;
-}
-
-.partner-service-card .btn-contact-details:hover {
-  background-color: #4B5320;
+  .partner-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
 }

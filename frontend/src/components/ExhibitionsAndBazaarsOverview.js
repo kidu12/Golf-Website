@@ -17,31 +17,35 @@ const ExhibitionsAndBazaarsOverview = ({ language }) => {
     ],
   };
 
-  const summary = {
-    en: {
-      title: 'Your Premier Event Destination',
-      description: 'Our club offers versatile and elegant spaces perfect for hosting a wide range of events, from professional exhibitions to vibrant community bazaars. With state-of-the-art facilities and a dedicated support team, we ensure your event is a memorable success. Our flexible layouts can be customized to meet your specific needs, making your exhibition or bazaar a standout occasion.',
-    },
-    am: {
-      title: 'የእርስዎ ዋና የዝግጅት መድረሻ',
-      description: 'የእኛ ክለብ ከሙያዊ ኤግዚቢሽኖች እስከ ህያው የማህበረሰብ ባዛሮች ድረስ ሰፊ ዝግጅቶችን ለማስተናገድ ፍጹም የሆኑ ሁለገብ እና የሚያምሩ ቦታዎችን ያቀርባል። ዘመናዊ ተቋማት እና ቁርጠኛ የድጋፍ ቡድን ዝግጅትዎ የማይረሳ ስኬት እንዲሆን እናረጋግጣለን። የእኛ ተለዋዋጭ አቀማመጦች የእርስዎን ልዩ ፍላጎቶች ለማሟላት ሊበጁ ይችላሉ፣ ይህም የእርስዎን ኤግዚቢሽን ወይም ባዛር የላቀ ዝግጅት ያደርገዋል።',
-    },
-  };
-
   const featuresContent = language === 'am' ? features.am : features.en;
-  const summaryContent = language === 'am' ? summary.am : summary.en;
-  const title = language === 'am' ? 'የእኛ ቁልፍ ባህሪዎች' : 'Our Key Features';
+  const keyFeaturesTitle = language === 'am' ? 'የእኛ ቁልፍ ባህሪዎች' : 'Our Key Features';
 
   return (
-    <section className="overview-section">
-      <div className="summary-wrapper">
-          <h3 className="summary-title">{summaryContent.title}</h3>
-          <p className="summary-description">{summaryContent.description}</p>
-        </div>
-        <br />
+    <section className="py-5 bg-light" data-aos="fade-up">
       <div className="container">
-        <h2 className="overview-title">{title}</h2>
-        <div className="row">
+        <h1 className="display-4 fw-bold text-black text-center">
+          {language === 'am' ? 'ኤግዚቢሽኖች እና ባዛሮች' : 'Exhibitions & Bazaars'}
+        </h1>
+        <p className="lead mt-2 text-center">
+          {language === 'am' 
+            ? 'ለማንኛውም ዝግጅት ተስማሚ'
+            : 'Perfect for Any Event'}
+        </p>
+      </div>
+      <div className="container py-5">
+        <h2 className="fw-bold mb-4">
+          {language === 'en' ? 'Overview' : 'አጠቃላይ እይታ'}
+        </h2>
+        <p>
+          {language === 'en'
+            ? 'Our club offers versatile and elegant spaces perfect for hosting a wide range of events, from professional exhibitions to vibrant community bazaars. With state-of-the-art facilities and a dedicated support team, we ensure your event is a memorable success. Our flexible layouts can be customized to meet your specific needs, making your exhibition or bazaar a standout occasion.'
+            : 'የእኛ ክለብ ከሙያዊ ኤግዚቢሽኖች እስከ ህያው የማህበረሰብ ባዛሮች ድረስ ሰፊ ዝግጅቶችን ለማስተናገድ ፍጹም የሆኑ ሁለገብ እና የሚያምሩ ቦታዎችን ያቀርባል። ዘመናዊ ተቋማት እና ቁርጠኛ የድጋፍ ቡድን ዝግጅትዎ የማይረሳ ስኬት እንዲሆን እናረጋግጣለን። የእኛ ተለዋዋጭ አቀማመጦች የእርስዎን ልዩ ፍላጎቶች ለማሟላት ሊበጁ ይችላሉ፣ ይህም የእርስዎን ኤግዚቢሽን ወይም ባዛር የላቀ ዝግጅት ያደርገዋል።'}
+        </p>
+      </div>
+
+      <div className="container">
+        <h2 className="overview-title text-center fw-bold">{keyFeaturesTitle}</h2>
+        <div className="row mt-4">
           {featuresContent.map((feature, index) => (
             <div className="col-md-6 col-lg-3 d-flex" key={index}>
               <div className="feature-card">
@@ -54,7 +58,6 @@ const ExhibitionsAndBazaarsOverview = ({ language }) => {
             </div>
           ))}
         </div>
-        
       </div>
     </section>
   );

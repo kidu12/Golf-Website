@@ -34,8 +34,8 @@ const AboutMissionVision = ({ language }) => {
     </h5>
     <p>
       {language === 'en' 
-        ? '“Deliver top-tier golf, hospitality, and events that spark sportsmanship, kick back some relaxation, and bring people together—always backing the Defence Force community and beyond.”'
-        : '“የስፖርታዊ ጨዋነትን መንፈስ የሚያነቃቁ፣ መዝናናትን የሚያመጡ እና ሰዎችን የሚያሰባስቡ ከፍተኛ ደረጃ ያላቸው የጎልፍ፣ የእንግዳ ተቀባይነት እና የዝግጅት አገልግሎቶችን መስጠት—ሁልጊዜም ከመከላከያ ሰራዊት ማህበረሰብ እና ከዚያም በላይ በመደገፍ።”'
+        ? 'Deliver top-tier golf, hospitality, and events that spark sportsmanship, kick back some relaxation, and bring people together—always backing the Defence Force community and beyond.'
+        : 'የስፖርታዊ ጨዋነትን መንፈስ የሚያነቃቁ፣ መዝናናትን የሚያመጡ እና ሰዎችን የሚያሰባስቡ ከፍተኛ ደረጃ ያላቸው የጎልፍ ስፓርት እና  ሌሎች ተጨማሪ የዝግጅት አገልግሎቶችን በከፍተኛ እንግዳ ተቀባይነት ስሜት መስጠት ሁልጊዜም የመከላከያ ሰራዊት አባላትን፣ቤተሰቦቻቸውን እና ማህበረሰቡን  መደገፍ።'
       }
     </p>
     

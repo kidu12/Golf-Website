@@ -27,17 +27,6 @@ const CarWashHero = ({ language }) => {
         position: 'relative',
       }}
     >
-      <div className="overlay position-absolute w-100 h-100 opacity-50"></div>
-      <div className="container position-relative z-2">
-        <h1 className="display-4 fw-bold text-white ">
-          {language === 'am' ? 'የመኪና እጥበት' : 'Car Wash'}
-        </h1>
-        <p className="lead mt-2">
-          {language === 'am' 
-            ? 'ንፁህ እና አንጸባራቂ'
-            : 'Clean and Sparkling'}
-        </p>
-      </div>
     </section>
   );
 };

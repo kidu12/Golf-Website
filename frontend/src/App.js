@@ -1,46 +1,43 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
-import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
+import ScrollToTop from './components/ScrollToTop'; // ✅ Make sure this exists
 import Home from './pages/Home';
 import About from './pages/About';
-import ConferenceHall from './pages/ConferenceHall';
-import ContactPage from './pages/ContactPage';
-import NewsEventsPage from './pages/NewsEventsPage';
-import BarRestaurant from './pages/BarRestaurant';
-import SpaSteamCenter from './pages/SpaSteamCenter';
-import GymCenter from './pages/GymCenter';
-import GardenGrounds from './pages/GardenGrounds';
-import TennisCourt from './pages/TennisCourt';
-import OtherServicesDetail from './pages/OtherServices';
-import PrivacyPolicy from './pages/PrivacyPolicy';
 import Membership from './pages/Membership';
-import JuiceBar from './pages/JuiceBar';
-import ChildrensPlayground from './pages/ChildrensPlayground';
+import NewsEventsPage from './pages/NewsEventsPage';
+import ContactPage from './pages/ContactPage';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import BarRestaurant from './pages/BarRestaurant';
 import CarWash from './pages/CarWash';
-import CoffeeCeremony from './pages/CoffeeCeremony';
 import CateringService from './pages/CateringService';
+import ChildrensPlayground from './pages/ChildrensPlayground';
+import CoffeeCeremony from './pages/CoffeeCeremony';
+import ConferenceHall from './pages/ConferenceHall';
 import ExhibitionsAndBazaars from './pages/ExhibitionsAndBazaars';
+import GardenGrounds from './pages/GardenGrounds';
+import GymCenter from './pages/GymCenter';
+import JuiceBar from './pages/JuiceBar';
+import OtherServices from './pages/OtherServices';
+import SpaSteamCenter from './pages/SpaSteamCenter';
+import TennisCourt from './pages/TennisCourt';
 
 // Admin
-
 import Dashboard from './admin/Dashboard';
 import ProtectedRoute from './admin/ProtectedRoute';
 import AdminLogin from './admin/AdminLogin';
 
 const App = () => {
-  const [language, setLanguage] = useState(null); // Initially null
+  const [language, setLanguage] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const storedLang = localStorage.getItem('preferredLanguage') || 'en';
     setLanguage(storedLang);
-    setLoading(false); // Done loading
+    setLoading(false);
     AOS.init({ duration: 1000, once: true });
   }, []);
 
@@ -50,15 +47,9 @@ const App = () => {
     localStorage.setItem('preferredLanguage', newLang);
   };
 
-    useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
-  
   const isAdminPath = window.location.pathname.startsWith('/admin');
 
-  if (loading) return null; // Don't render anything until language is ready
-
-  
+  if (loading) return null;
 
   return (
     <Router>
@@ -67,23 +58,23 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home language={language} />} />
         <Route path="/about" element={<About language={language} />} />
-        <Route path="/contact" element={<ContactPage language={language} />} />
-        <Route path="/conference" element={<ConferenceHall language={language} />} />
+        <Route path="/membership" element={<Membership language={language} />} />
         <Route path="/news-events" element={<NewsEventsPage language={language} />} />
-        <Route path="/bar" element={<BarRestaurant language={language} />} />
-        <Route path="/spa" element={<SpaSteamCenter language={language} />} />
-        <Route path="/gym" element={<GymCenter language={language} />} />
-        <Route path="/garden" element={<GardenGrounds language={language} />} />
-        <Route path="/tennis" element={<TennisCourt language={language} />} />
-        <Route path="/other-services" element={<OtherServicesDetail language={language} />} />
+        <Route path="/contact" element={<ContactPage language={language} />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy language={language} />} />
-              <Route path="/membership" element={<Membership language={language} />} />
-        <Route path="/juice-bar" element={<JuiceBar language={language} />} />
-        <Route path="/childrens-playground" element={<ChildrensPlayground language={language} />} />
-        <Route path="/car-wash" element={<CarWash language={language} />} />
-        <Route path="/coffee-ceremony" element={<CoffeeCeremony language={language} />} />
-        <Route path="/catering-service" element={<CateringService language={language} />} />
-        <Route path="/services/exhibitions-and-bazaars" element={<ExhibitionsAndBazaars language={language} />} />
+        <Route path="/services/bar-restaurant" element={<BarRestaurant language={language} />} />
+        <Route path="/services/car-wash" element={<CarWash language={language} />} />
+        <Route path="/services/catering" element={<CateringService language={language} />} />
+        <Route path="/services/childrens-playground" element={<ChildrensPlayground language={language} />} />
+        <Route path="/services/coffee-ceremony" element={<CoffeeCeremony language={language} />} />
+        <Route path="/services/conference-hall" element={<ConferenceHall language={language} />} />
+        <Route path="/services/exhibitions-bazaars" element={<ExhibitionsAndBazaars language={language} />} />
+        <Route path="/services/garden-grounds" element={<GardenGrounds language={language} />} />
+        <Route path="/services/gym-center" element={<GymCenter language={language} />} />
+        <Route path="/services/juice-bar" element={<JuiceBar language={language} />} />
+        <Route path="/services/other-services" element={<OtherServices language={language} />} />
+        <Route path="/services/spa-steam-center" element={<SpaSteamCenter language={language} />} />
+        <Route path="/services/tennis-court" element={<TennisCourt language={language} />} />
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route
           path="/admin/*"
@@ -98,6 +89,5 @@ const App = () => {
     </Router>
   );
 };
-
 
 export default App;

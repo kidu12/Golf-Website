@@ -2,8 +2,16 @@ import React from 'react';
 
 const GymOverview = ({ language }) => {
   return (
-    <section className="container my-5">
+    <section className="py-5 bg-light" data-aos="fade-up">
       <div className="container">
+        <h1 className="display-4 fw-bold text-black text-center">
+          {language === 'en' ? 'Fitness & Gym' : 'የአካል ብቃት እና ጂም'}
+        </h1>
+        <p className="lead mt-2 text-center">
+          {language === 'en' 
+            ? 'A complete and energizing fitness experience.' 
+            : 'የተሟላ እና አነቃቂ የአካል ብቃት ተሞክሮ።'}
+        </p>
         <h2 className="fw-bold mb-4">
         {language === 'en' ? 'Overview' : 'አጠቃላይ እይታ'}
 </h2>
@@ -27,8 +35,8 @@ const GymOverview = ({ language }) => {
         <td>{language === 'am' ? 'ዘመናዊ ካርዲዮ እና ጥንካሬ ማሽኖች፣ ነጻ የክብደት መሳሪያዎች' : 'Modern cardio & strength machines, free weights'}</td>
       </tr>
       <tr>
-        <td>{language === 'am' ? 'ሻወሪዎች' : 'Showers'}</td>
-        <td>{language === 'am' ? 'ለወንድ እና ለሴት የተለዩ ሻወሪ ቦታዎች' : 'Separate male and female shower facilities'}</td>
+        <td>{language === 'am' ? 'መታጠቢያ' : 'Showers'}</td>
+        <td>{language === 'am' ? 'ለወንድ እና ለሴት የመታጠቢያ ቦታዎች' : 'Separate male and female shower facilities'}</td>
       </tr>
       <tr>
         <td>{language === 'am' ? 'ሎከር' : 'Locker'}</td>
@@ -40,7 +48,7 @@ const GymOverview = ({ language }) => {
       </tr>
       <tr>
         <td>{language === 'am' ? 'አሰልጣኞች' : 'Trainers'}</td>
-        <td>{language === 'am' ? 'በየቀኑ የሚገኙ የተፈቀዱ የግል አሰልጣኞች' : 'Certified personal trainers available daily'}</td>
+        <td>{language === 'am' ? 'በየቀኑ የሚገኙ የተሟላ ስልጠና እና ማረጋገጫ ሰርቲፊኬት ያላቸው የግል አሰልጣኞች' : 'Certified personal trainers available daily'}</td>
       </tr>
     </tbody>
   </table>

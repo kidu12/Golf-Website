@@ -25,19 +25,7 @@ const ConferenceHero = ({ language }) => {
         transition: 'background-image 1s ease-in-out'
       }}
     >
-      <div className="overlay position-absolute w-100 h-100  opacity-50"></div>
-      <div className="container position-relative z-2">
-        <h1 className="display-4 fw-bold text-white">
-  {language === 'en' ? 'VIP Conference Room' : 'የመሰብሰቢያ አዳራሽ'}
-</h1>
-<p className="lead mt-2">
-  {language === 'en' 
-    ? 'An ideal space for high-level meetings, trainings, and private events.' 
-    : 'ፍላጎታችሁ ለየት ባለ ሁኔታ ለሚዘጋጅ ስብሰባ፣ ስልጠናና የግል ጉዳዮቻችሁን የምትወያዩበት የመሰብሰቢያ እና የመወያያ ቦታ ሲሆን የስብሰባ ክፍላችን አለላችሁ።'
-  }
-</p>
-
-      </div>
+      
     </section>
   );
 };

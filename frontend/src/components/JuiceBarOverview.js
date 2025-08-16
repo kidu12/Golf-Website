@@ -2,14 +2,25 @@ import React from 'react';
 
 const JuiceBarOverview = ({ language }) => {
   return (
-    <section className="container py-5">
+    <section className="py-5 bg-light" data-aos="fade-up">
+      <div className="container">
+        <h1 className="display-4 fw-bold text-black text-center">
+          {language === 'am' ? 'የፍራፍሬ ጭማቂ ባር' : 'Juice Bar'}
+        </h1>
+        <p className="lead mt-2 text-center">
+          {language === 'am' 
+            ? 'ጤናማ እና ትኩስ'
+            : 'Healthy and Refreshing'}
+        </p>
+      </div>
+      <div className="container py-5">
       <h2 className="fw-bold mb-4">
         {language === 'en' ? 'Overview' : 'አጠቃላይ እይታ'}
       </h2>
       <p>
         {language === 'en'
           ? 'Our Juice Bar offers a vibrant selection of freshly squeezed juices and healthy blends, perfect for a refreshing break. Choose from seasonal fruits, energizing smoothies, and custom wellness drinks—all prepared on the spot.'
-          : 'የፍራፍሬ ጭማቂ ባራችን ከተፈጥሮ ፍራፍሬዎች የተዘጋጀ በጤና ላይ የተመሰረተ የጭማቂ እና የስሙዚ ምርጫ ያቀርባል። ከጨዋታ ወይም እንቅስቃሴ በኋላ ለመማማት ወይም ለመቀዝቀዝ ተስማሚ ነውየፍራፍሬ ጭማቂ ባራችን ከተፈጥሮ ፍራፍሬዎች የተዘጋጀ በጤና ላይ የተመሰረተ የተለያዩ የጭማቂ እና የስሙዚ አይነቶችን እንደምርጫዎ ያቀርባል። ከጨዋታ ወይም ከእንቅስቃሴ በኋላ ለሲጠቀሙት የተለየ እርካታን ከቀዝቀዝ ከሚያደርግ ስሜት ይወስዱታል፡፡ ይሞክሩት በእርግጠኝነት ይዎዱታል።'}
+          : 'የፍራፍሬ ጭማቂ ባራችን ከተፈጥሮ ፍራፍሬዎች የተዘጋጀ በጤና ላይ የተመሰረተ የተለያዩ የጭማቂ እና የስሙዚ አይነቶችን እንደምርጫዎ ያቀርባል። ከጨዋታ ወይም ከእንቅስቃሴ በኋላ ሲጠቀሙት የተለየ እርካታን ቀዝቀዝ በሚያደርግ ስሜት ይወስዱታል፡፡ ይሞክሩት በእርግጠኝነት ይዎዱታል።'}
       </p>
 
       <h4 className="fw-bold mt-5 mb-3">{language === 'en' ? 'Key Features' : 'ቁልፍ ገጽታዎች'}</h4>
@@ -39,6 +50,7 @@ const JuiceBarOverview = ({ language }) => {
           </tr>
         </tbody>
       </table>
+      </div>
     </section>
   );
 };

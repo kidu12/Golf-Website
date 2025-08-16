@@ -2,20 +2,51 @@ import React, { useEffect, useState } from 'react';
 import '../styles/hero.css';
 import logo from '../assets/images/logo.webp';
 
-const images = [
+// Desktop images
+const desktopImages = [
   '/images/bg4.webp',
   '/images/gate.webp',
   '/images/front_5.webp',
+  '/images/bg2.webp',
   '/images/main_hall.webp',
   '/images/front_3.webp',
   '/images/bg_06.webp',
-  '/images/open_gate.webp',
-  '/images/golf_store.webp', 
-  '/images/bg2.webp',
+  '/images/golf_store.webp',
+];
+
+// Mobile images
+const mobileImages = [
+  '/images/Home/bg4.webp',
+  '/images/Home/gate.webp',
+  '/images/Home/front_5.webp',
+  '/images/Home/bg2.webp',
+  '/images/Home/main_hall.webp',
+  '/images/Home/front_3.webp',
+  '/images/Home/bg_06.webp',
+  '/images/Home/golf_store.webp',
 ];
 
 const Hero = ({ language }) => {
   const [current, setCurrent] = useState(0);
+  const [images, setImages] = useState(desktopImages);
+
+  useEffect(() => {
+    // Function to select the correct images based on screen size
+    const updateImages = () => {
+      if (window.innerWidth < 768) {
+        setImages(mobileImages);
+      } else {
+        setImages(desktopImages);
+      }
+    };
+
+    // Run on mount
+    updateImages();
+
+    // Run on resize
+    window.addEventListener('resize', updateImages);
+    return () => window.removeEventListener('resize', updateImages);
+  }, []);
 
   useEffect(() => {
     // Preload images
@@ -29,7 +60,7 @@ const Hero = ({ language }) => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images]);
 
   return (
     <section className="hero d-flex align-items-end justify-content-center text-white text-center">

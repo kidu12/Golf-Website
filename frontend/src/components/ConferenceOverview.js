@@ -3,6 +3,15 @@ import React from 'react';
 const ConferenceOverview = ({ language }) => (
   <section className="py-5 bg-light" data-aos="fade-up">
     <div className="container">
+    <h1 className="display-4 fw-bold text-black text-center">
+  {language === 'en' ? 'VIP Conference Room' : 'የመሰብሰቢያ አዳራሽ'}
+</h1>
+<p className="lead mt-2 text-center">
+  {language === 'en' 
+    ? 'An ideal space for high-level meetings, trainings, and private events.' 
+    : "ፍላጎታችሁ ለየት ባለ ሁኔታ ለሚዘጋጅ ስብሰባ፣ ስልጠናና የግል ጉዳዮቻችሁን የምትወያዩበት ሲሆን <br/> የመሰብሰቢያ እና የመወያያ ቦታ ሲሆን የስብሰባ ክፍላችን አለላችሁ።"
+  }
+</p>
   <h2 className="fw-bold mb-4">
   {language === 'en' ? 'Overview' : 'አጠቃላይ እይታ'}
 </h2>
@@ -19,13 +28,13 @@ const ConferenceOverview = ({ language }) => (
           <strong>{language === 'en' ? 'Capacity:' : 'የማስተናገድ አቅም:'}</strong> {language === 'en' ? 'Up to 30 guests' : 'እስከ 30 እንግዶች'}
         </li>
         <li class="list-group-item">
-          <strong>{language === 'en' ? 'Ideal For:' : 'ተስማሚ ለ:'}</strong> {language === 'en' ? 'Board meetings, special meetings, and special private events.' : 'ለቦርድ አባላት ስብሰባዎች፣ ለልዩ ልዩ ስብሰባዎች፣ እና ለልዩ የግል ዝግጅቶች።።'}
+          <strong>{language === 'en' ? 'Ideal For:' : 'ተስማሚ:'}</strong> {language === 'en' ? 'Board meetings, special meetings, and special private events.' : 'ለቦርድ አባላት እና ለልሎቸ ለልዩ ልዩ ስብሰባዎች።'}
         </li>
         <li class="list-group-item">      
           <strong>{language === 'en' ? 'Equipment:' : 'መሳሪያዎች:'}</strong> {language === 'en' ? 'Modern furnishings and specialized equipment.' : 'ዘመናዊ እና ልዩ መሣሪያዎች የተገጠሙለት።'}
         </li>
         <li class="list-group-item">
-          <strong>{language === 'en' ? 'Atmosphere:' : 'ከባቢ አየር:'}</strong> {language === 'en' ? 'Comfortable and private.' : 'ምቹ እና የግል።'}
+          <strong>{language === 'en' ? 'Atmosphere:' : 'ከባቢ አየር:'}</strong> {language === 'en' ? 'Comfortable and private.' : 'በአረንጓዴ የተሸፈነ ምቹ እና ነፍሻማ።'}
         </li>
       </ul>
 

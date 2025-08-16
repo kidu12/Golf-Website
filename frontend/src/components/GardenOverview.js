@@ -2,7 +2,18 @@ import React from 'react';
 
 const GardenOverview = ({ language }) => {
   return (
-    <section className="container py-5">
+    <section className="py-5 bg-light" data-aos="fade-up">
+      <div className="container">
+        <h1 className="display-4 fw-bold text-black text-center">
+          {language === 'en' ? 'Garden Area' : 'አረንጓዴ ስፍራ'}
+        </h1>
+        <p className="lead mt-2 text-center">
+          {language === 'en'
+            ? 'A stunning outdoor venue for unforgettable weddings, lively concerts, and cultural festivals.'
+            : 'ለማይረሱ የሰርግ ስነ-ስርዓቶች፣ ለደማቅ ኮንሰርቶች እና ለባህላዊ ፌስቲቫሎች የሚሆን አስደናቂ የውጪ ቦታ።'}
+        </p>
+      </div>
+      <div className="container py-5">
     
 <h2 className="fw-bold mb-4">
   {language === 'en' ? 'Overview' : 'አጠቃላይ እይታ'}
@@ -11,7 +22,7 @@ const GardenOverview = ({ language }) => {
       <p>
         {language === 'en'
           ? 'The beautifully landscaped garden at Addis Ababa Golf Club stays green and vibrant throughout the year, offering a stunning outdoor venue for a wide range of events. With the capacity to host 10,000 to 15,000 guests, it’s an ideal setting for unforgettable weddings, lively concerts, cultural festivals, and more.'
-          : 'የመከላከያ ሰራዊት ፋውንዴሽን አዲስ አበባ  ጎልፍ ክለብ ዓመቱን ሙሉ  በሚያምር ሁኔታ  አረንጓዴ ለምለም ሆኖ የሚቆይ ከ650,000 ካሬ ሜትር ስፋት ያለው ሰፊ ቦታ ነው። በተጨማሪም ከ10,000-15,000 እንግዶችን ማስተናገድ የሚችለው ይህ ቦታ ለሰርግ ፕሮግራሞች፣ ለኮንሰርቶች እና ለፌስቲቫሎች ተስማሚ ነው።'}
+          : 'የመከላከያ ሰራዊት ፋውንዴሽን አዲስ አበባ  ጎልፍ ክለብ ዓመቱን ሙሉ  በሚያምር ሁኔታ  አረንጓዴ ለምለም ሆኖ የሚቆይ ከ650,000 በላይ ካሬ ሜትር ስፋት ያለው ሰፊ ቦታ ነው። በተጨማሪም ከ10,000-15,000 እንግዶችን ማስተናገድ የሚችለው ይህ ቦታ ለሰርግ ፕሮግራሞች፣ ለኮንሰርቶች እና ለፌስቲቫሎች ተስማሚ ነው።'}
       </p>
 
       <h4 class="fw-bold mt-5 mb-3">{language === 'en' ? 'Key Features' : 'ቁልፍ ገጽታዎች'}</h4>
@@ -71,6 +82,7 @@ const GardenOverview = ({ language }) => {
   </table>
      
 
+      </div>
     </section>
   );
 };

@@ -19,17 +19,17 @@
 }
 
 .footer-link:hover {
-  color: #4B5320; /* Military Green for hover */
+  color: #e0f715; /* A distinct, lighter color for phone numbers */
 }
 
 .footer-social-icon a {
-  color: #FFFFFF;
+  color: #e0f715; /* A distinct, lighter color for phone numbers */
   font-size: 1.5rem;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-social-icon a:hover {
-  color: #4B5320; /* Military Green */
+  color: #eeeeee; /* Military Green */
   transform: scale(1.1);
 }
 
@@ -48,4 +48,39 @@
 
 .footer-custom hr {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Contact Info Styles */
+.contact-info {
+  line-height: 1.6;
+}
+
+.contact-info .address {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.contact-info .phone-group p {
+  margin-bottom: 0.5rem;
+}
+
+.contact-info .phone-number {
+  color: #e0f715; /* A distinct, lighter color for phone numbers */
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.contact-info .phone-number:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.working-hours p {
+  margin-bottom: 0.5rem;
+}
+
+.more-info-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: bold;
 }

@@ -28,18 +28,7 @@ const BarHero = ({ language }) => {
         position: 'relative',
       }}
     >
-      <div className="overlay position-absolute w-100 h-100  opacity-50"></div>
-      <div className="container position-relative z-2">
-      <h1 className="display-4 fw-bold text-white ">
-  {language === 'am' ? 'ባር እና ሬስቶራንት' : 'Bar & Restaurant'}
-</h1>
 
-<p className="lead mt-2">
-  {language === 'am' 
-    ? 'የኢትዮጵያን ባህላዊ ጣዕሞች ከተለያዩ ዓለም አቀፍ ምግቦችና መጠጦች በጥራት እና በተመጣጣኝ ዋጋ ማጣጣም ይችላሉ።' 
-    : 'Indulge in a menu that blends authentic Ethiopian flavors with a rich variety of international dishes.'}
-</p>
-      </div>
     </section>
   );
 };

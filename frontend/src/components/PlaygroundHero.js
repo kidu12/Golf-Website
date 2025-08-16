@@ -27,17 +27,7 @@ const PlaygroundHero = ({ language }) => {
         position: 'relative',
       }}
     >
-      <div className="overlay position-absolute w-100 h-100 opacity-50"></div>
-      <div className="container position-relative z-2">
-        <h1 className="display-4 fw-bold text-white ">
-          {language === 'am' ? 'የልጆች መጫወቻ ሜዳ' : 'Children\'s Playground'}
-        </h1>
-        <p className="lead mt-2">
-          {language === 'am' 
-            ? 'ደህንነቱ የተጠበቀ እና አስደሳች'
-            : 'Safe and Fun for Kids'}
-        </p>
-      </div>
+
     </section>
   );
 };

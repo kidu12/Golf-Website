@@ -27,17 +27,7 @@ const CateringServiceHero = ({ language }) => {
         position: 'relative',
       }}
     >
-      <div className="overlay position-absolute w-100 h-100 opacity-50"></div>
-      <div className="container position-relative z-2">
-        <h1 className="display-4 fw-bold text-white ">
-          {language === 'am' ? 'የቤት ውስጥ እና የውጪ የምግብ አቅርቦት አገልግሎት' : 'Indoor and Outdoor Catering Service'}
-        </h1>
-        <p className="lead mt-2">
-          {language === 'am' 
-            ? 'እንከን የለሽ እና ከፍተኛ ጥራት ያለው የመመገቢያ ተሞክሮ'
-            : 'A Seamless and High-Quality Dining Experience'}
-        </p>
-      </div>
+
     </section>
   );
 };

@@ -18,13 +18,23 @@ const SpaOverview = ({ language }) => {
       { en: "Dining area", am: "መመገቢያ ቦታ" }
     ],
     media: [
-      { en: "Flat-screen TV", am: "ጠባይ ማያ ገጽ ቴሌቪዥን" },
-      { en: "Wake-up service", am: "የማንቂያ ደውል" }
+      { en: "Flat-screen TV", am: "ደረጃውን የጠበቀ ቴሌቪዥን ከተሟላ ቻናል ጋር" },
     ]
   };
 
   return (
-    <section className="container py-5">
+    <section className="py-5 bg-light" data-aos="fade-up">
+      <div className="container">
+        <h1 className="display-4 fw-bold text-black text-center">
+          {language === 'am' ? 'የመኝታ አገልግሎት' : 'Room Service'}
+        </h1>
+        <p className="lead mt-2 text-center">
+          {language === 'am' 
+            ? 'ፅዱ እና ምቹ የመኝታ አገልግሎት በተመጣጣኝ ዋጋ ፤ ከተሟላ ፋሲሊቲ ጋር እናቀርባለን።' 
+            : 'Experience comfort and relaxation in our luxurious rooms.'}
+        </p>
+      </div>
+      <div className="container py-5">
       {/* Deluxe Room Section */}
       <div className="room-details mb-5">
         <h2 className="fw-bold mb-3">{language === 'en' ? 'Deluxe Room' : 'ዴሉክስ ክፍል'}</h2>
@@ -32,7 +42,7 @@ const SpaOverview = ({ language }) => {
         
         <div className="row mt-4">
           <div className="col-md-6">
-            <h4 className="fw-bold">{language === 'en' ? 'General' : 'አጠቃላይ'}</h4>
+            <h4 className="fw-bold">{language === 'en' ? 'General' : 'ተጨማሪ አገልግሎቶች'}</h4>
             <ul>
               {amenities.general.map((item, index) => (
                 <li key={index}>{language === 'en' ? item.en : item.am}</li>
@@ -56,7 +66,7 @@ const SpaOverview = ({ language }) => {
             </ul>
           </div>
           <div className="col-md-6">
-            <h4 className="fw-bold">{language === 'en' ? 'Media' : 'ሚዲያ'}</h4>
+            <h4 className="fw-bold">{language === 'en' ? 'Media' : 'መዝናኛ አገልግሎት'}</h4>
             <ul>
               {amenities.media.map((item, index) => (
                 <li key={index}>{language === 'en' ? item.en : item.am}</li>
@@ -105,6 +115,7 @@ const SpaOverview = ({ language }) => {
             </ul>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
