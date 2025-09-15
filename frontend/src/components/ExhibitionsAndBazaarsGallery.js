@@ -11,11 +11,24 @@ const images = [image1, image2, image3, image4];
 
 const ExhibitionsAndBazaarsGallery = ({ language }) => {
   const scrollRef = useRef(null);
-  const [modalImage, setModalImage] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(null);
 
   const scroll = (direction) => {
     const scrollAmount = 400;
     scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+  };
+
+  const openModal = (index) => setCurrentImageIndex(index);
+  const closeModal = () => setCurrentImageIndex(null);
+
+  const showNextImage = (e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const showPrevImage = (e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
   return (
@@ -28,7 +41,7 @@ const ExhibitionsAndBazaarsGallery = ({ language }) => {
           <button className="scroll-btn left" onClick={() => scroll('left')}>&lt;</button>
           <div className="gallery-scroll" ref={scrollRef}>
             {images.map((src, index) => (
-              <div className="gallery-image-wrapper" key={index} onClick={() => setModalImage(src)}>
+              <div className="gallery-image-wrapper" key={index} onClick={() => openModal(index)}>
                 <img src={src} className="gallery-image" alt={`Exhibition or Bazaar ${index + 1}`} />
               </div>
             ))}
@@ -38,10 +51,12 @@ const ExhibitionsAndBazaarsGallery = ({ language }) => {
       </div>
 
       {/* Fullscreen modal */}
-      {modalImage && (
-        <div className="image-modal" onClick={() => setModalImage(null)}>
-          <img src={modalImage} className="modal-img" alt="preview" />
-          <button className="close-btn" onClick={() => setModalImage(null)}>×</button>
+      {currentImageIndex !== null && (
+        <div className="image-modal" onClick={closeModal}>
+          <button className="modal-nav-btn prev" onClick={showPrevImage}>&lt;</button>
+          <img src={images[currentImageIndex]} className="modal-img" alt="preview" />
+          <button className="modal-nav-btn next" onClick={showNextImage}>&gt;</button>
+          <button className="close-btn" onClick={closeModal}>×</button>
         </div>
       )}
     </section>

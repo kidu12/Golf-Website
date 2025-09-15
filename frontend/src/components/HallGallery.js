@@ -3,20 +3,32 @@ import React, { useRef, useState } from 'react';
 import '../styles/gallery.css';
 
 
-import garden1 from '../assets/images/hall_1.webp';
+import garden1 from '../assets/images/new_vip_1.webp';
 import garden2 from '../assets/images/hall_4.webp';
-import garden3 from '../assets/images/hall_2.webp';
 import crowd from '../assets/images/hall_8.webp';
-import wedding from '../assets/images/hall_1.webp';
+import wedding from '../assets/images/new_vip_1.webp';
 
-const images = [garden1, garden2, garden3, crowd, wedding];
+const images = [garden1, garden2, crowd, wedding];
 
-const GardenGallery = ({ language }) => {
+const HallGallery = ({ language }) => {
   const scrollRef = useRef(null);
-  const [modalImage, setModalImage] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(null);
 
   const scroll = (dir) => {
     scrollRef.current.scrollBy({ left: dir === 'left' ? -400 : 400, behavior: 'smooth' });
+  };
+
+  const openModal = (index) => setCurrentImageIndex(index);
+  const closeModal = () => setCurrentImageIndex(null);
+
+  const showNextImage = (e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const showPrevImage = (e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
   return (
@@ -29,8 +41,8 @@ const GardenGallery = ({ language }) => {
           <button className="scroll-btn left" onClick={() => scroll('left')}>&lt;</button>
           <div className="gallery-scroll" ref={scrollRef}>
             {images.map((img, i) => (
-              <div className="gallery-image-wrapper" key={i} onClick={() => setModalImage(img)}>
-                <img src={img} className="gallery-image" alt={`garden-${i}`} />
+              <div className="gallery-image-wrapper" key={i} onClick={() => openModal(i)}>
+                <img src={img} className="gallery-image" alt={`hall-${i}`} />
               </div>
             ))}
           </div>
@@ -38,14 +50,16 @@ const GardenGallery = ({ language }) => {
         </div>
       </div>
 
-      {modalImage && (
-        <div className="image-modal" onClick={() => setModalImage(null)}>
-          <img src={modalImage} className="modal-img" alt="preview" />
-          <button className="close-btn" onClick={() => setModalImage(null)}>×</button>
+      {currentImageIndex !== null && (
+        <div className="image-modal" onClick={closeModal}>
+          <button className="modal-nav-btn prev" onClick={showPrevImage}>&lt;</button>
+          <img src={images[currentImageIndex]} className="modal-img" alt="preview" />
+          <button className="modal-nav-btn next" onClick={showNextImage}>&gt;</button>
+          <button className="close-btn" onClick={closeModal}>×</button>
         </div>
       )}
     </section>
   );
 };
 
-export default GardenGallery;
+export default HallGallery;

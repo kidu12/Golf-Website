@@ -79,21 +79,21 @@ const Footer = ({ language = 'en' }) => {
             <h5 className="text-uppercase mb-4">{footerText.coreServices[language]}</h5>
             <p><a href="/services/tennis-court" className="footer-link">{footerText.golfCourse[language]}</a></p>
             <p><a href="/services/bar-restaurant" className="footer-link">{footerText.barRestaurant[language]}</a></p>
+            <p><a href="/services/garden-grounds" className="footer-link">{footerText.gardenGrounds[language]}</a></p>
             <p><a href="/services/gym-center" className="footer-link">{footerText.fitnessGym[language]}</a></p>
             <p><a href="/services/conference-hall" className="footer-link">{footerText.vipConference[language]}</a></p>
             <p><a href="/services/room-service" className="footer-link">{footerText.roomService[language]}</a></p>
-            <p><a href="/services/garden-grounds" className="footer-link">{footerText.gardenGrounds[language]}</a></p>
           </div>
 
           {/* Additional Services */}
           <div className="col-lg-2 col-md-4 mx-auto mt-3">
             <h5 className="text-uppercase mb-4">{footerText.additionalServices[language]}</h5>
             <p><a href="/services/juice-bar" className="footer-link">{footerText.juiceBar[language]}</a></p>
-            <p><a href="/services/childrens-playground" className="footer-link">{footerText.childrensPlayground[language]}</a></p>
-            <p><a href="/services/car-wash" className="footer-link">{footerText.carWash[language]}</a></p>
             <p><a href="/services/coffee-ceremony" className="footer-link">{footerText.coffeeCeremony[language]}</a></p>
             <p><a href="/services/catering" className="footer-link">{footerText.catering[language]}</a></p>
             <p><a href="/services/exhibitions-bazaars" className="footer-link">{footerText.exhibitions[language]}</a></p>
+            <p><a href="/services/car-wash" className="footer-link">{footerText.carWash[language]}</a></p>
+            <p><a href="/services/childrens-playground" className="footer-link">{footerText.childrensPlayground[language]}</a></p>
             <p><a href="/services/other-services" className="footer-link">{footerText.others[language]}</a></p>
           </div>
 

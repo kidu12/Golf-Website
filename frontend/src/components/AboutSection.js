@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/AboutSection.css';
-import hotelImage from '../assets/images/bg5.webp'; // replace with your actual image path
+import hotelImage from '../assets/images/gardon.webp'; // replace with your actual image path
 
 const AboutSection = ({ language }) => {
   const sectionRef = useRef(null);

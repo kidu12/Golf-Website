@@ -5,20 +5,99 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Addis Ababa Golf Club - Premier destination for golf, events, and recreation."
-    />
+
+    <!-- SEO Meta Tags -->
+    <title>Addis Ababa Golf Club - Premier Golfing & Recreation in Ethiopia</title>
+    <meta name="description" content="Discover the Addis Ababa Golf Club, Ethiopia's premier destination for golf, dining, and events. Enjoy our lush greens, modern facilities, and exceptional services." />
+    <meta name="keywords" content="Addis Ababa Golf Club, golf in Ethiopia, Addis Ababa events, golf course, restaurant, spa, gym, wedding hall, playground" />
+    <meta name="robots" content="index, follow" />
+    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" /> <!-- Replace with your code -->
+    <link rel="canonical" href="https://www.aagolfclub.com" /> <!-- Replace with your actual domain -->
+
+    <!-- Alternate Language Pages -->
+    <link rel="alternate" hreflang="en" href="https://www.aagolfclub.com" />
+    <link rel="alternate" hreflang="am" href="https://www.aagolfclub.com/am" />
+    <link rel="alternate" hreflang="x-default" href="https://www.aagolfclub.com" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.aagolfclub.com" /> <!-- Replace with your actual domain -->
+    <meta property="og:title" content="Addis Ababa Golf Club - Premier Golfing & Recreation" />
+    <meta property="og:description" content="Experience the best of golf, dining, and events at the Addis Ababa Golf Club. Your ultimate recreational escape." />
+    <meta property="og:image" content="%PUBLIC_URL%/social-share-image.jpg" /> <!-- Create and place this image in /public -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.aagolfclub.com" /> <!-- Replace with your actual domain -->
+    <meta property="twitter:title" content="Addis Ababa Golf Club - Premier Golfing & Recreation" />
+    <meta property="twitter:description" content="Experience the best of golf, dining, and events at the Addis Ababa Golf Club. Your ultimate recreational escape." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/social-share-image.jpg" /> <!-- Create and place this image in /public -->
+
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Addis Ababa Golf Club</title>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsClub",
+      "name": "Addis Ababa Golf Club",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Old Airport Area",
+        "addressLocality": "Addis Ababa",
+        "addressCountry": "ET"
+      },
+      "telephone": "+251-113-71-28-70",
+      "url": "https://www.aagolfclub.com",
+      "image": "%PUBLIC_URL%/logo512.png",
+      "priceRange": "$$$",
+      "servesCuisine": "International",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "06:00",
+          "closes": "22:00"
+        }
+      ],
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "18-Hole Golf Course"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Restaurant & Bar"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Spa & Wellness Center"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Gym"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Conference Hall"
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

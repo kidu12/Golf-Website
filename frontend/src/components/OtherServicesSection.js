@@ -81,7 +81,7 @@ const OtherServices = ({ language }) => {
       </style>
       <section className="container py-5 other-services-section">
         <h2 className="text-center mb-4 other-services-heading">
-          {language === 'en' ? 'Partner Services by Rent' : 'በኪራይ የሚሰጡ የአጋር አገልግሎቶች'}
+          {language === 'en' ? 'Partner Services' : 'የአጋር አገልግሎቶች'}
         </h2>
         <div className="row g-4">
           {services.map((service, index) => (

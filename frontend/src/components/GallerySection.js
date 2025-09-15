@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import '../styles/gallery.css';
-import img1 from '../assets/images/bar_007.webp';
+import img1 from '../assets/images/new_bar_01.webp';
 import img2 from '../assets/images/bar_004.webp';
 import img3 from '../assets/images/bar_02.webp';
 import img4 from '../assets/images/Bar_.webp';

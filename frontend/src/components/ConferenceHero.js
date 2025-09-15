@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import garden1 from '../assets/images/hall_1.webp';
+import garden1 from '../assets/images/new_vip_1.webp';
 import garden2 from '../assets/images/hall_5.webp';
 import garden3 from '../assets/images/hall_3.webp';
 

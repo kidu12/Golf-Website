@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ServiceCard from './ServiceCard';
-import GolfCourseImage from '../assets/images/bg1.webp';
+import GolfCourseImage from '../assets/images/golf_new_1.webp';
 import BarRestaurantImage from '../assets/images/bg_12.webp';
 import GardenGroundsImage from '../assets/images/gardon_fild.webp';
 import RoomServiceImage from '../assets/images/Room_02.webp';
 import FitnessGymImage from '../assets/images/Gym-2.webp';
-import ConferenceRoomImage from '../assets/images/hall_9.webp';
+import ConferenceRoomImage from '../assets/images/new_vip_1.webp';
 import JuiceBarImage from '../assets/images/juice_bar_image.webp';
 import PlaygroundImage from '../assets/images/kids_2.webp';
 import CarWashImage from '../assets/images/car_wash.webp';
@@ -43,7 +43,7 @@ const Services = ({ language })  => {
   const services = [
     {
       title: { en: 'Golf Sport & Course ', am: 'የጎልፍ ስፖርት እና ስልጠና  ' },
-      description: { en: 'Nestled within the tranquil landscape, our 18-hole private resort course offers an enriching experience for golfers of all skill levels. With a par of 70 and a total length of 5,529 meters, the course is expertly designed to provide both challenge and enjoyment.', am: 'በኢትዮጵያ የመጀመሪያና ብቸኛ አለም አቀፍ ደረጃን የጠበቀ፤ 18 ጉድጓዶች ያሉት፣ አሰልጣኞችን ከተሟሉ የጎልፍ መጫዎቻ እቃዎች ጋር ያሟላ የጎልፍ ሜዳ ስለሆነ መጥተው ይጎብኙን። በሁለገብ አገልግሎቶቻችን ይረካሉ፡፡ በተጨማሪም ከፍተኛ ልምድና እውቀት ያላቸው አሰልጣኞቹን በመጠቀም የጎልፍ ጫዎታን ለጀማሪዎች በማሰልጠን ለከፍተኛ ውድድር እንዲበቁ እናደርጋለን።' },
+      description: { en: 'Nestled within the tranquil landscape, our 18-hole private resort course offers an enriching experience for golfers of all skill levels. With a par of 71 and a total length of 5,529 meters, the course is expertly designed to provide both challenge and enjoyment.', am: 'በኢትዮጵያ የመጀመሪያና ብቸኛ አለም አቀፍ ደረጃን የጠበቀ፤ 18 ጉድጓዶች ያሉት፣ አሰልጣኞችን ከተሟሉ የጎልፍ መጫዎቻ እቃዎች ጋር ያሟላ የጎልፍ ሜዳ ስለሆነ መጥተው ይጎብኙን። በሁለገብ አገልግሎቶቻችን ይረካሉ፡፡ በተጨማሪም ከፍተኛ ልምድና እውቀት ያላቸው አሰልጣኞቹን በመጠቀም የጎልፍ ጫዎታን ለጀማሪዎች በማሰልጠን ለከፍተኛ ውድድር እንዲበቁ እናደርጋለን።' },
       image: GolfCourseImage,
       link: '/services/tennis-court'
     },
@@ -54,28 +54,40 @@ const Services = ({ language })  => {
       link: '/services/bar-restaurant'
     },
     {
+      title: { en: 'Garden & Grounds', am: 'የአትክልት እና ግቢ' },
+      description: { en: 'The beautifully landscaped garden remains lush and vibrant year-round, providing a breathtaking outdoor venue for various events. With a capacity to accommodate 10,000 to 15,000 guests, it offers the perfect setting for weddings, concerts, cultural festivals, and grand celebrations.', am: 'የመከላከያ ሰራዊት ፋውንዴሽን አዲስ አበባ ጎልፍ ክለብ ዓመቱን ሙሉ በሚያምር ሁኔታ አረንጓዴ ለምለም ሆኖ የሚቆይ ከ650,000 ካሬ ሜትር ስፋት ያለው ሰፊ ቦታ ነው። በተጨማሪም ከ10,000-15,000 እንግዶችን ማስተናገድ የሚችለው ይህ ቦታ ለጋብቻዎች፣ ለኮንሰርቶች እና ለፌስቲቫሎች ተስማሚ ነው።' },
+      image: GardenGroundsImage,
+      link: '/services/garden-grounds'
+    },
+    {
       title: { en: 'Juice Bar', am: 'የጁስ ባር' },
       description: { en: 'Our Juice Bar offers a vibrant selection of freshly squeezed juices and healthy blends, perfect for a refreshing break. Choose from seasonal fruits, energizing smoothies, and custom wellness drinks—all prepared on the spot.', am: 'የፍራፍሬ ጭማቂ ባራችን ከተፈጥሮ ፍራፍሬዎች የተዘጋጀ በጤና ላይ የተመሰረተ የጭማቂ እና የስሙዚ ምርጫ ያቀርባል። ከጨዋታ ወይም እንቅስቃሴ በኋላ ለመማማት ወይም ለመቀዝቀዝ ተስማሚ ነው።' },
       image: JuiceBarImage,
       link: '/services/juice-bar'
     },
     {
-      title: { en: 'Childrens Playground', am: 'የልጆች መጫወቻ ቦታ' },
-      description: { en: 'A safe and fun playground for children to enjoy while you relax. The playground is equipped with modern and secure play structures, offering an engaging space that encourages creativity, activity, and social interaction for young visitors.', am: 'እርስዎ በሚያርፉበት ጊዜ ልጆችዎ በደስታ እንዲጫወቱበት የተዘጋጀ አስተማማኝ እና አስደሳች የመጫወቻ ስፍራ። የመጫወቻ ስፍራው በዘመናዊ እና አስተማማኝ የመጫወቻ አወቃቀሮች የተገጠመለት ነው።' },
-      image: PlaygroundImage,
-      link: '/services/childrens-playground'
-    },   
-    {
-      title: { en: 'Car Wash', am: 'የመኪና ማጠቢያ' },
-      description: { en: 'Keep your vehicle sparkling clean with our professional car wash service. We offer a range of cleaning packages, from a quick exterior wash to a full interior and exterior detailing, ensuring your car leaves looking fresh and well cared for.', am: 'ፕሮፌሽናል በሆነው የመኪና እጥበት አገልግሎታችን መኪናዎን ንፁህ እና አንጸባራቂ ያድርጉት። ከፈጣን የውጪ እጥበት እስከ ሙሉ የውስጥ እና የውጪ ዝርዝር ክሊኒንግ ድረስ የተለያዩ የጽዳት ፓኬጆችን እናቀርባለን።' },
-      image: CarWashImage,
-      link: '/services/car-wash'
+      title: { en: 'Room Service', am: 'የተሟላ የመኝታ አገልግሎት' },
+      description: { en: 'Enjoy the convenience of our 24/7 room service. Whether its a late-night snack or a full-course meal, our extensive menu offers a wide variety of options delivered right to your door, ensuring comfort and satisfaction at any hour.', am: 'ድርጅታችን የመከላከያ ሰራዊት ፋውንዴሽን አዲስ አበባ ጎልፍ ክለብ ፅዱ እና ምቹ የምኝታ አገልግሎት በተመጣጣኝ ዋጋ ፤ ከተሟላ ፋሲሊቲ ጋር 7/24 እናቀርባለን።' },
+      image: RoomServiceImage,
+      link: '/services/spa-steam-center'
     },
     {
       title: { en: 'Traditional Ethiopian Coffee Ceremony', am: 'ለባህላዊ የቡና ሥነ-ስርዓት' },
       description: { en: 'Experience the rich cultural heritage of Ethiopia with our traditional coffee ceremony. A unique and authentic experience for our guests, perfect for relaxing, connecting, and savoring the rich aroma of freshly brewed coffee.', am: 'የኢትዮጵያን የበለጸገ የባህል ቅርስ በባህላዊ የቡና አፈላል ስነ ስርዓታችን ይለማመዱ። ለእንግዶቻችን ልዩ እና እውነተኛ የሆነ ተሞክሮ።' },
       image: CoffeeCeremonyImage,
       link: '/services/coffee-ceremony'
+    },
+    {
+      title: { en: 'Fitness & Gym', am: 'የጂምናዚየም አገልግሎት' },
+      description: { en: 'Our state-of-the-art gym is tailored to meet the fitness needs of all our guests. It is equipped with advanced workout machines, free weights, and designated areas for both cardio and strength training, ensuring a comprehensive and motivating fitness experience.', am: 'በስፖርት ሳይንስ በሰለጠኑ የድርጅታችን ሰራተኞች በመታገዝ በአረንጓዴ የተሸፈነ ማራኪ ተፈጥሮን እየተመለከቱ የተሟላ ስፓርታዊ እንቅስቃሴ ለማድረግ ምቹ የሆነ የጅም አገልግሎት በተመጣጣኝ ዋጋ መጠቀም ይችላሉ።' },
+      image: FitnessGymImage,
+      link: '/services/gym-center'
+    },
+    {
+      title: { en: 'VIP Conference Room', am: 'የስብሰባ አዳራሽ አገልግሎት' },
+      description: { en: 'Our VIP meeting room is ideal for high-level meetings, trainings, and private events. Equipped with modern furnishings, specialized equipment, and a comfortable atmosphere, it provides an exclusive and productive space for up to 30 guests.', am: 'ድርጅታችን የመከላከያ ሰራዊት ፋውንዴሽን አዲስ አበባ ጎልፍ ክለብ ከ 30 እስከ 50 ተሳታፊዎች ማስተናገድ የሚችል ምቹ እና ፅዱ የመሰብሰቢያ አዳራሽ ያቀርባል።' },
+      image: ConferenceRoomImage,
+      link: '/services/conference-hall'
     },
     {
       title: { en: 'Indoor and Outdoor Catering Service', am: 'የቤት ውስጥ እና የውጪ የምግብ አቅርቦት አገልግሎት' },
@@ -90,29 +102,18 @@ const Services = ({ language })  => {
       link: '/services/exhibitions-bazaars'
     },
     {
-      title: { en: 'Room Service', am: 'የተሟላ የመኝታ አገልግሎት' },
-      description: { en: 'Enjoy the convenience of our 24/7 room service. Whether its a late-night snack or a full-course meal, our extensive menu offers a wide variety of options delivered right to your door, ensuring comfort and satisfaction at any hour.', am: 'ድርጅታችን የመከላከያ ሰራዊት ፋውንዴሽን አዲስ አበባ ጎልፍ ክለብ ፅዱ እና ምቹ የምኝታ አገልግሎት በተመጣጣኝ ዋጋ ፤ ከተሟላ ፋሲሊቲ ጋር 7/24 እናቀርባለን።' },
-      image: RoomServiceImage,
-      link: '/services/spa-steam-center'
+      title: { en: 'Car Wash', am: 'የመኪና ማጠቢያ' },
+      description: { en: 'Keep your vehicle sparkling clean with our professional car wash service. We offer a range of cleaning packages, from a quick exterior wash to a full interior and exterior detailing, ensuring your car leaves looking fresh and well cared for.', am: 'ፕሮፌሽናል በሆነው የመኪና እጥበት አገልግሎታችን መኪናዎን ንፁህ እና አንጸባራቂ ያድርጉት። ከፈጣን የውጪ እጥበት እስከ ሙሉ የውስጥ እና የውጪ ዝርዝር ክሊኒንግ ድረስ የተለያዩ የጽዳት ፓኬጆችን እናቀርባለን።' },
+      image: CarWashImage,
+      link: '/services/car-wash'
     },
     {
-      title: { en: 'Fitness & Gym', am: 'የጂምናዚየም አገልግሎት' },
-      description: { en: 'Our state-of-the-art gym is tailored to meet the fitness needs of all our guests. It is equipped with advanced workout machines, free weights, and designated areas for both cardio and strength training, ensuring a comprehensive and motivating fitness experience.', am: 'በስፖርት ሳይንስ በሰለጠኑ የድርጅታችን ሰራተኞች በመታገዝ በአረንጓዴ የተሸፈነ ማራኪ ተፈጥሮን እየተመለከቱ የተሟላ ስፓርታዊ እንቅስቃሴ ለማድረግ ምቹ የሆነ የጅም አገልግሎት በተመጣጣኝ ዋጋ መጠቀም ይችላሉ።' },
-      image: FitnessGymImage,
-      link: '/services/gym-center'
-    },
-    {
-      title: { en: 'Garden & Grounds', am: 'የአትክልት እና ግቢ' },
-      description: { en: 'The beautifully landscaped garden remains lush and vibrant year-round, providing a breathtaking outdoor venue for various events. With a capacity to accommodate 10,000 to 15,000 guests, it offers the perfect setting for weddings, concerts, cultural festivals, and grand celebrations.', am: 'የመከላከያ ሰራዊት ፋውንዴሽን አዲስ አበባ ጎልፍ ክለብ ዓመቱን ሙሉ በሚያምር ሁኔታ አረንጓዴ ለምለም ሆኖ የሚቆይ ከ650,000 ካሬ ሜትር ስፋት ያለው ሰፊ ቦታ ነው። በተጨማሪም ከ10,000-15,000 እንግዶችን ማስተናገድ የሚችለው ይህ ቦታ ለጋብቻዎች፣ ለኮንሰርቶች እና ለፌስቲቫሎች ተስማሚ ነው።' },
-      image: GardenGroundsImage,
-      link: '/services/garden-grounds'
-    },
-    {
-      title: { en: 'VIP Conference Room', am: 'የስብሰባ አዳራሽ አገልግሎት' },
-      description: { en: 'Our VIP meeting room is ideal for high-level meetings, trainings, and private events. Equipped with modern furnishings, specialized equipment, and a comfortable atmosphere, it provides an exclusive and productive space for up to 30 guests.', am: 'ድርጅታችን የመከላከያ ሰራዊት ፋውንዴሽን አዲስ አበባ ጎልፍ ክለብ ከ 30 እስከ 50 ተሳታፊዎች ማስተናገድ የሚችል ምቹ እና ፅዱ የመሰብሰቢያ አዳራሽ ያቀርባል።' },
-      image: ConferenceRoomImage,
-      link: '/services/conference-hall'
-    },
+      title: { en: 'Childrens Playground', am: 'የልጆች መጫወቻ ቦታ' },
+      description: { en: 'A safe and fun playground for children to enjoy while you relax. The playground is equipped with modern and secure play structures, offering an engaging space that encourages creativity, activity, and social interaction for young visitors.', am: 'እርስዎ በሚያርፉበት ጊዜ ልጆችዎ በደስታ እንዲጫወቱበት የተዘጋጀ አስተማማኝ እና አስደሳች የመጫወቻ ስፍራ። የመጫወቻ ስፍራው በዘመናዊ እና አስተማማኝ የመጫወቻ አወቃቀሮች የተገጠመለት ነው።' },
+      image: PlaygroundImage,
+      link: '/services/childrens-playground'
+    },  
+  
   ];
 
   return (

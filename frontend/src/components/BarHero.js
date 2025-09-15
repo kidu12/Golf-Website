@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import bg1 from '../assets/images/Bar_.webp';
-import bg2 from '../assets/images/bar_11.webp';
+import img1 from '../assets/images/new_bar_01.webp';
 import bg3 from '../assets/images/bg_13.webp';
 
 
-const images = [bg3, bg1, bg2];
+const images = [bg3, bg1, img1];
 
 const BarHero = ({ language }) => {
   const [index, setIndex] = useState(0);

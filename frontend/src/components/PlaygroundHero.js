@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import image1 from '../assets/images/kids_2.webp';
-import image2 from '../assets/images/kids_3.webp';
-import image3 from '../assets/images/kids_4.webp';
+import image3 from '../assets/images/kids_3.webp';
 
-const images = [image1, image2, image3];
+const images = [image1, image3];
 
 const PlaygroundHero = ({ language }) => {
   const [index, setIndex] = useState(0);

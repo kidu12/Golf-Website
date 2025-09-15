@@ -22,7 +22,7 @@ import GardenGrounds from './pages/GardenGrounds';
 import GymCenter from './pages/GymCenter';
 import JuiceBar from './pages/JuiceBar';
 import OtherServices from './pages/OtherServices';
-import SpaSteamCenter from './pages/SpaSteamCenter';
+import RoomService from './pages/RoomService';
 import TennisCourt from './pages/TennisCourt';
 
 // Admin
@@ -73,7 +73,7 @@ const App = () => {
         <Route path="/services/gym-center" element={<GymCenter language={language} />} />
         <Route path="/services/juice-bar" element={<JuiceBar language={language} />} />
         <Route path="/services/other-services" element={<OtherServices language={language} />} />
-        <Route path="/services/spa-steam-center" element={<SpaSteamCenter language={language} />} />
+        <Route path="/services/spa-steam-center" element={<RoomService language={language} />} />
         <Route path="/services/tennis-court" element={<TennisCourt language={language} />} />
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route

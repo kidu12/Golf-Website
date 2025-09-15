@@ -77,8 +77,8 @@ const PartnerServicesPage = ({ language }) => {
     <section className="partner-services-section">
       <div className="container">
         <div className="text-center mb-5">
-          <h1 className="partner-services-title">{language === 'am' ? 'የአጋር አገልግሎቶች በኪራይ' : 'Partner Services by Rent'}</h1>
-          <p className="lead text-muted partner-services-subtitle">{language === 'am' ? 'በአጋሮቻችን የሚሰጡ ተጨማሪ አገልግሎቶች።' : 'Discover premium services offered by our trusted partners, available for rent to enhance your club experience.'}</p>
+          <h1 className="partner-services-title">{language === 'am' ? 'የአጋር አገልግሎቶች' : 'Partner Services'}</h1>
+          <p className="lead text-muted partner-services-subtitle">{language === 'am' ? 'በአጋሮቻችን የሚሰጡ ተጨማሪ አገልግሎቶች።' : 'Discover premium services offered by our trusted partners, available to enhance your club experience.'}</p>
         </div>
         <div className="row justify-content-center">
           {partnerServices.map(renderServiceCard)}

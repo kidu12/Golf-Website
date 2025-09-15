@@ -10,10 +10,23 @@ const images = [garden1, garden2, garden3, crowd, wedding];
 
 const GardenGallery = ({ language }) => {
   const scrollRef = useRef(null);
-  const [modalImage, setModalImage] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(null);
 
   const scroll = (dir) => {
     scrollRef.current.scrollBy({ left: dir === 'left' ? -400 : 400, behavior: 'smooth' });
+  };
+
+  const openModal = (index) => setCurrentImageIndex(index);
+  const closeModal = () => setCurrentImageIndex(null);
+
+  const showNextImage = (e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const showPrevImage = (e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
   return (
@@ -25,7 +38,7 @@ const GardenGallery = ({ language }) => {
           <button className="scroll-btn left" onClick={() => scroll('left')}>&lt;</button>
           <div className="gallery-scroll" ref={scrollRef}>
             {images.map((img, i) => (
-              <div className="gallery-image-wrapper" key={i} onClick={() => setModalImage(img)}>
+              <div className="gallery-image-wrapper" key={i} onClick={() => openModal(i)}>
                 <img src={img} className="gallery-image" alt={`garden-${i}`} />
               </div>
             ))}
@@ -34,10 +47,12 @@ const GardenGallery = ({ language }) => {
         </div>
       </div>
 
-      {modalImage && (
-        <div className="image-modal" onClick={() => setModalImage(null)}>
-          <img src={modalImage} className="modal-img" alt="preview" />
-          <button className="close-btn" onClick={() => setModalImage(null)}>×</button>
+      {currentImageIndex !== null && (
+        <div className="image-modal" onClick={closeModal}>
+          <button className="modal-nav-btn prev" onClick={showPrevImage}>&lt;</button>
+          <img src={images[currentImageIndex]} className="modal-img" alt="preview" />
+          <button className="modal-nav-btn next" onClick={showNextImage}>&gt;</button>
+          <button className="close-btn" onClick={closeModal}>×</button>
         </div>
       )}
     </section>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import room1 from '../assets/images/Room_04.webp'; // TODO: Replace with actual room images
+import room1 from '../assets/images/Room_06.webp'; // TODO: Replace with actual room images
 import room2 from '../assets/images/main_hall.webp';
 import room3 from '../assets/images/Room_02.webp';
 
