@@ -4,6 +4,7 @@ import TennisOverview from '../components/GolfOverview';
 import TennisBenefits from '../components/GolfBenefits';
 import TennisGallery from '../components/GolfGallery';
 import OtherServices from '../components/OtherServices';
+import ServiceVideoSection from '../components/ServiceVideoSection';
 
 const TennisCourt = ({ language }) => {
   return (
@@ -23,6 +24,7 @@ const TennisCourt = ({ language }) => {
           />
         </div>
       </section>
+      <ServiceVideoSection serviceTitle="Golf Course" language={language} />
       <TennisBenefits language={language}/>
       <TennisGallery language={language} />
       <OtherServices language={language}/>

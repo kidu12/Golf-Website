@@ -7,10 +7,22 @@ npm-debug.log*
 
 # Env
 .env
+*.env
+.env*
+!.env.example
+
+# Database dumps
+*.sql
 
 # Builds
 build/
 dist/
+*.zip
+
+# Heavy upload media (videos)
+uploads/*.mp4
+uploads/*.mov
+uploads/*.MOV
 
 # OS files
 .DS_Store

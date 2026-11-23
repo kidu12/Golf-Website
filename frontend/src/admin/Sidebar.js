@@ -6,8 +6,10 @@ const Sidebar = () => (
     <h5 className="fw-bold">Admin Panel</h5>
     <nav className="nav flex-column mt-4">
       <NavLink to="/admin/news-events" className="nav-link text-white">📰 News & Events</NavLink>
+      <NavLink to="/admin/hero-post" className="nav-link text-white">📰 Hero Post</NavLink>
       <NavLink to="/admin/contacts" className="nav-link text-white">📩 Contact Messages</NavLink>
       <NavLink to="/admin/testimonials" className="nav-link text-white">🌟 Testimonials</NavLink>
+      <NavLink to="/admin/video-management" className="nav-link text-white">🎬 Video Management</NavLink>
       <NavLink to="/" className="nav-link text-white mt-3">← Back to Site</NavLink>
     </nav>
   </div>

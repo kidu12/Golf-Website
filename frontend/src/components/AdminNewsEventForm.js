@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { getToken } from '../utils/auth';
@@ -5,12 +6,15 @@ import { getToken } from '../utils/auth';
 const AdminNewsEventForm = ({ onItemAdded, editingItem = null }) => {
   const [form, setForm] = useState({
     title: '',
-    type: 'News',
+    type: 'News and Events',
     shortDesc: '',
     detailedDesc: '',
     date: '',
     image: null,
+    video: null,
+    link: ''
   });
+  const [links, setLinks] = useState([{ text: '', url: '' }]); // Separate state for multiple links
 
   useEffect(() => {
     if (editingItem) {
@@ -21,7 +25,21 @@ const AdminNewsEventForm = ({ onItemAdded, editingItem = null }) => {
         detailedDesc: editingItem.detailedDesc,
         date: editingItem.date?.slice(0, 16), // trim seconds
         image: null,
+        video: null,
+        link: editingItem.link || ''
       });
+      
+      // Initialize links from existing data
+      if (editingItem.links) {
+        try {
+          const parsedLinks = JSON.parse(editingItem.links);
+          setLinks(parsedLinks.length > 0 ? parsedLinks : [{ text: '', url: '' }]);
+        } catch (err) {
+          setLinks([{ text: '', url: editingItem.link || '' }]);
+        }
+      } else if (editingItem.link) {
+        setLinks([{ text: 'Link', url: editingItem.link }]);
+      }
     }
   }, [editingItem]);
 
@@ -33,6 +51,26 @@ const AdminNewsEventForm = ({ onItemAdded, editingItem = null }) => {
     });
   };
 
+  // Handle link changes
+  const handleLinkChange = (index, field, value) => {
+    const updatedLinks = [...links];
+    updatedLinks[index][field] = value;
+    setLinks(updatedLinks);
+  };
+
+  // Add new link field
+  const addLink = () => {
+    setLinks([...links, { text: '', url: '' }]);
+  };
+
+  // Remove link field
+  const removeLink = (index) => {
+    if (links.length > 1) {
+      const updatedLinks = links.filter((_, i) => i !== index);
+      setLinks(updatedLinks);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -42,6 +80,10 @@ const AdminNewsEventForm = ({ onItemAdded, editingItem = null }) => {
         fd.append(key, form[key]);
       }
     });
+
+    // Add links to FormData - KEEPING THE SAME STRUCTURE
+    const validLinks = links.filter(link => link.text.trim() && link.url.trim());
+    fd.append('links', JSON.stringify(validLinks));
 
     try {
       if (editingItem) {
@@ -62,12 +104,15 @@ const AdminNewsEventForm = ({ onItemAdded, editingItem = null }) => {
 
       setForm({
         title: '',
-        type: 'News',
+        type: 'News and Events',
         shortDesc: '',
         detailedDesc: '',
         date: '',
         image: null,
+        video: null,
+        link: ''
       });
+      setLinks([{ text: '', url: '' }]); // Reset links
       onItemAdded();
     } catch (err) {
       console.error('Failed to submit item:', err);
@@ -78,12 +123,15 @@ const AdminNewsEventForm = ({ onItemAdded, editingItem = null }) => {
   const handleCancelEdit = () => {
     setForm({
       title: '',
-      type: 'News',
+      type: 'News and Events',
       shortDesc: '',
       detailedDesc: '',
       date: '',
       image: null,
+      video: null,
+      link: ''
     });
+    setLinks([{ text: '', url: '' }]);
   };
 
   return (
@@ -109,8 +157,7 @@ const AdminNewsEventForm = ({ onItemAdded, editingItem = null }) => {
             onChange={handleChange}
             required
           >
-            <option value="News">News</option>
-            <option value="Event">Event</option>
+            <option value="News and Events">News and Events</option>
           </select>
         </div>
       </div>
@@ -138,14 +185,72 @@ const AdminNewsEventForm = ({ onItemAdded, editingItem = null }) => {
         onChange={handleChange}
         required
       />
+
+      {/* Multiple Links Section - ADDED */}
+      <div className="mt-3">
+        <label className="form-label fw-bold">External Links</label>
+        
+        {links.map((link, index) => (
+          <div key={index} className="link-field mb-2 p-2 border rounded">
+            <div className="row g-2 align-items-center">
+              <div className="col-md-5">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Link text (e.g., Facebook, Website)"
+                  value={link.text}
+                  onChange={(e) => handleLinkChange(index, 'text', e.target.value)}
+                />
+              </div>
+              <div className="col-md-6">
+                <input
+                  type="url"
+                  className="form-control"
+                  placeholder="https://example.com"
+                  value={link.url}
+                  onChange={(e) => handleLinkChange(index, 'url', e.target.value)}
+                />
+              </div>
+              <div className="col-md-1">
+                {links.length > 1 && (
+                  <button
+                    type="button"
+                    className="btn btn-outline-danger btn-sm"
+                    onClick={() => removeLink(index)}
+                  >
+                    ×
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+        
+        <button
+          type="button"
+          className="btn btn-outline-primary btn-sm"
+          onClick={addLink}
+        >
+          + Add Another Link
+        </button>
+      </div>
+
+      <label className="form-label mt-2">Image</label>
       <input
         className="form-control mt-2"
         name="image"
         type="file"
         accept="image/*"
         onChange={handleChange}
-        required={!editingItem}
       />
+      <label className="form-label mt-2">Video</label>
+      <input
+         className='form-control'
+         name='video'
+         type='file'
+         accept='video/*'
+         onChange={handleChange}
+        />
 
       <div className="d-flex mt-3">
         <button type="submit" className="btn btn-success me-2">Submit</button>

@@ -40,18 +40,39 @@ const AdminContactMessages = () => {
     }
   };
 
+  const handleExport = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/contact/export`, {
+        headers: { Authorization: `Bearer ${token}` },
+        responseType: 'blob',
+      });
+      const blob = new Blob([response.data], { type: 'text/csv;charset=utf-8;' });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', `contact_messages_${new Date().toISOString().slice(0, 10)}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error('Failed to export CSV:', err);
+      alert('Failed to export CSV. Please ensure you are logged in.');
+    }
+  };
+
   return (
     <div className="container py-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2 className="fw-bold">Contact Form Submissions</h2>
-        <a
-          href={`${process.env.REACT_APP_API_URL}/api/contact/export`}
+        <button
+          onClick={handleExport}
           className="btn btn-outline-success"
-          target="_blank"
-          rel="noopener noreferrer"
+          type="button"
         >
           📤 Export to CSV
-        </a>
+        </button>
       </div>
 
       <table className="table table-bordered table-hover">

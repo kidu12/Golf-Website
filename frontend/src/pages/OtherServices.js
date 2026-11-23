@@ -4,6 +4,7 @@ import InteriorDecorationImg from '../assets/images/Decor_service.webp';
 import SpaImg from '../assets/images/Spa-7.webp';
 import PhotoShopImg from '../assets/images/Photo_sudio.webp';
 import '../styles/PartnerServices.css';
+import ServiceVideoSection from '../components/ServiceVideoSection';
 
 const partnerServices = [
   {
@@ -83,6 +84,7 @@ const PartnerServicesPage = ({ language }) => {
         <div className="row justify-content-center">
           {partnerServices.map(renderServiceCard)}
         </div>
+        <ServiceVideoSection serviceTitle="Others" language={language} />
       </div>
     </section>
   );

@@ -4,8 +4,10 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Header from './Header';
 import NewsEventManager from './AdminNewsEvents';
+import AdminHeroPostManager from './AdminHeroPost';
 import ContactManager from './AdminContactMessages';
 import TestimonialManager from './AdminTestimonials';
+import AdminVideoManagement from './AdminVideoManagement';
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -16,7 +18,7 @@ const Dashboard = () => {
 
 const handleLogout = () => {
   localStorage.removeItem('token');
-  navigate('/admin-login');
+  navigate('/admin/login');
 };
   return (
     <div className="d-flex">
@@ -26,8 +28,10 @@ const handleLogout = () => {
         <Routes>
           <Route path="/" element={<Navigate to="news-events" />} />
           <Route path="news-events" element={<NewsEventManager />} />
+          <Route path="hero-post" element={<AdminHeroPostManager />} />
           <Route path="contacts" element={<ContactManager />} />
           <Route path="testimonials" element={<TestimonialManager />} />
+          <Route path="video-management" element={<AdminVideoManagement />} />
         </Routes>
       </div>
     </div>

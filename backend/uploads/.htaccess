@@ -1,0 +1,33 @@
+# Apache protection for the uploads directory
+# Disable script execution completely to prevent web shells
+
+# 1. Disable execution of scripts and directory indexing
+Options -Indexes -ExecCGI
+
+# 2. Block direct execution of scripting languages
+<FilesMatch "(?i)\.(php|phtml|php3|php4|php5|php7|phps|cgi|pl|py|jsp|asp|aspx|sh|bash|rb)$">
+  <IfModule !mod_authz_core.c>
+    Order Allow,Deny
+    Deny from all
+  </IfModule>
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>
+
+# 3. Prevent PHP engine execution
+<IfModule mod_php.c>
+  php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+  php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+  php_flag engine off
+</IfModule>
+
+# 4. Force nosniff header
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+</IfModule>
+

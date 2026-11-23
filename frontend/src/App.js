@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Header from './components/Header';
@@ -75,7 +75,8 @@ const App = () => {
         <Route path="/services/other-services" element={<OtherServices language={language} />} />
         <Route path="/services/spa-steam-center" element={<RoomService language={language} />} />
         <Route path="/services/tennis-court" element={<TennisCourt language={language} />} />
-        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin-login" element={<Navigate to="/admin/login" replace />} />
         <Route
           path="/admin/*"
           element={

@@ -1,107 +1,161 @@
+
 import React, { useEffect, useState } from 'react';
 import '../styles/hero.css';
-import logo from '../assets/images/logo.webp';
-
-// Desktop images
-const desktopImages = [
-  '/images/GERD_DS3.jpg',
-  '/images/New_year.jpg',
-  '/images/GERD4.webp.jpg',
-  '/images/bg4.webp',
-  '/images/Picture1.webp.webp',
-  '/images/front_5.webp',
-  '/images/golf_new_2.webp',
-  '/images/bg2.webp',
-  '/images/main_hall.webp',
-  '/images/front_3.webp',
-  '/images/bar_new_1.webp',
-  '/images/bg_06.webp',
-  '/images/golf_store.webp',
-];
-
-// Mobile images
-const mobileImages = [
-  '/images/Home/GERD_03.jpg',
-  '/images/Home/New_year2.jpg',
-  '/images/Home/GERD0_3.webp.jpg',
-  '/images/Home/bg4.webp',
-  '/images/Home/front_5.webp',
-  '/images/Home/golf_new_2.webp',
-  '/images/Home/bg2.webp',
-  '/images/Home/main_hall.webp',
-  '/images/Home/front_3.webp',
-  '/images/Home/bar_new_1.webp',
-  '/images/Home/bg_06.webp',
-  '/images/Home/golf_store.webp',
-];
+// import logo from '../assets/images/logo.webp';
+import axios from 'axios';
 
 const Hero = ({ language }) => {
-  const [current, setCurrent] = useState(0);
-  const [images, setImages] = useState(desktopImages);
+  const [activePosts, setActivePosts] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Function to select the correct images based on screen size
-    const updateImages = () => {
-      if (window.innerWidth < 768) {
-        setImages(mobileImages);
-      } else {
-        setImages(desktopImages);
-      }
-    };
-
-    // Run on mount
-    updateImages();
-
-    // Run on resize
-    window.addEventListener('resize', updateImages);
-    return () => window.removeEventListener('resize', updateImages);
+    fetchActivePosts();
   }, []);
 
+  // Auto-slide functionality
   useEffect(() => {
-    // Preload images
-    images.forEach((image) => {
-      const img = new Image();
-      img.src = image;
-    });
+    if (activePosts.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => 
+          prevIndex === activePosts.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 5000);
 
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
-    }, 10000);
+      return () => clearInterval(interval);
+    }
+  }, [activePosts.length]);
 
-    return () => clearInterval(interval);
-  }, [images]);
+  const fetchActivePosts = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/hero-post/active`);
+      
+     
+      if (Array.isArray(res.data)) {
+        setActivePosts(res.data);
+      } else {
+        setActivePosts([]);
+      }
+    } catch (error) {
+      console.error('Error fetching active posts:', error);
+      setError('Failed to load hero content');
+      setActivePosts([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+  };
+
+  const goToNext = () => {
+    setCurrentIndex(currentIndex === activePosts.length - 1 ? 0 : currentIndex + 1);
+  };
+
+  const goToPrev = () => {
+    setCurrentIndex(currentIndex === 0 ? activePosts.length - 1 : currentIndex - 1);
+  };
+
+  // Don't show anything if loading or no active posts
+  if (loading) {
+    return (
+      <section className="hero-single d-flex align-items-center justify-content-center text-white text-center">
+        <div className="overlay"></div>
+        <div className="content">
+          <div className="spinner-border text-light" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Return null if no active posts - hero section won't appear at all
+  if (activePosts.length === 0) {
+    return null; // This will hide the entire hero section
+  }
+
+  const currentPost = activePosts[currentIndex];
 
   return (
-    <section className="hero d-flex align-items-end justify-content-center text-white text-center">
-      {/* Slideshow images */}
-      {images.map((image, index) => (
-        <img
-          key={index}
-          src={image}
-          alt="Hero background"
-          className={`hero-image ${index === current ? 'active' : ''}`}
-        />
-      ))}
+    <section className="hero-single">
+      {/* Background Image with Overlay */}
+      <div 
+        className="hero-background"
+        style={{
+          backgroundImage: `url(${process.env.REACT_APP_API_URL}/uploads/${currentPost.image})`
+        }}
+      >
+        <div className="overlay"></div>
+      </div>
 
-      {/* Overlay */}
-      <div className="overlay"></div>
-
-      {/* Content */}
-      {current === 0 && (
-        <div className="content">
-          <h2 className="fw-bold text-white">
-            {language === 'en'
-              ? 'The Ethiopian Defense Forces Foundation Addis Ababa Golf Club would like to congratulate our employees, customers, and all our people on the inauguration of the long-awaited Renaissance Dam and wish you a peaceful, happy, and prosperous New Year.'
-              : 'የመከላከያ ሠራዊት ፋውንዴሽን አዲስ አበባ ጎልፍ ክለብ የዘመናት ቁጭት የነበረው የሕዳሴ ግድብ በመመረቁ ለድርጅታችን ሠራተኞች,ደንበኞቻችን እና ለመላው ህዝባችን እንኳን ደስ አለን እያለ መጭው አዲስ ዓመት የሰላም፣የደስታና እና የብልፅግና እንዲሆንላችሁ መልካም ምኞቱን ይገልፃል።'}
-          </h2>
-          <p className="mt-1 fst-italic">Lt. Col. Zewdu Tulu (Manager of the organization)</p>
-          <p className="mt-2">
-            {language === 'en'
-              ? 'Experience a warm welcome—our team is here to make you feel right at home!'
-              : 'ይምጡ ይጎብኙን አዲስ አበባ ጎልፍ ክለብ ጊዜዎን የማይረሳ ለማድረግ ዝግጁ ነው!'}
-          </p>
-        </div>
+      {/* Navigation Arrows - Only show if multiple posts */}
+      {activePosts.length > 1 && (
+        <>
+          <button className="hero-arrow hero-arrow-prev" onClick={goToPrev}>
+            ‹
+          </button>
+          <button className="hero-arrow hero-arrow-next" onClick={goToNext}>
+            ›
+          </button>
+        </>
       )}
+
+      {/* Hero Content - Updated to match screenshot_12 styling */}
+<div className="hero-content d-flex align-items-center justify-content-center text-white">
+  <div className="container">
+    {/* Hero Text - Clean layout like screenshot_12 */}
+    <div className="hero-text-content">
+      <h1 className="hero-title" style={{
+        fontSize: '2.1rem',
+        lineHeight: '1.5',
+        textShadow: '2px 2px 8px rgba(0,0,0,0.8)',
+        maxWidth: '1000px',
+        margin: '0 auto',
+        fontWeight: '500',
+        textAlign: 'center',
+        whiteSpace: 'pre-line',
+        wordWrap: 'break-word',
+        overflowWrap: 'break-word',
+        color: 'white',
+        marginBottom: '1rem'
+      }}>
+        {currentPost.description}
+      </h1>
+      <p className="hero-author" style={{
+        opacity: '0.9',
+        textShadow: '1px 1px 6px rgba(0,0,0,0.6)',
+        fontSize: '1.3rem',
+        fontStyle: 'normal',
+        marginTop: '1rem',
+        textAlign: 'center',
+        fontWeight: '500',
+        color: 'white',
+        lineHeight: '1.4'
+      }}>
+        {currentPost.author}
+      </p>
+    </div>
+
+    {/* Slide Indicators - Only show if multiple posts */}
+    {activePosts.length > 1 && (
+      <div className="hero-indicators-bottom">
+        {activePosts.map((_, index) => (
+          <button
+            key={index}
+            className={`indicator ${index === currentIndex ? 'active' : ''}`}
+            onClick={() => goToSlide(index)}
+          />
+        ))}
+      </div>
+    )}
+  </div>
+</div>
     </section>
   );
 };

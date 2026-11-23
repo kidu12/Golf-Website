@@ -11,6 +11,24 @@
 # production
 /build
 
+# Environment files
+.env
+*.env
+**/.env
+.env*
+!.env.example
+!**/.env.example
+
+# Database dumps
+*.sql
+**/*.sql
+
+# Sensitive deployment and security verification docs
+CPANEL_DEPLOYMENT_GUIDE.md
+SEC-29*
+*.docx
+*.zip
+
 # misc
 .DS_Store
 .env.local

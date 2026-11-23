@@ -8,13 +8,18 @@ const upload = require('../middleware/upload');
 router.get('/', serviceController.getAllServices);
 router.get('/:id', serviceController.getServiceById);
 
-// Create with image
-router.post('/', verifyToken, upload.single('image'), serviceController.createService);
+// Create with image and optional videos
+router.post('/', verifyToken, upload.fields([{ name: 'image', maxCount: 1 }, { name: 'videos', maxCount: 3 }]), serviceController.createService);
 
 // Update with image
-router.put('/:id', verifyToken, upload.single('image'), serviceController.updateService);
+router.put('/:id', verifyToken, upload.fields([{ name: 'image', maxCount: 1 }]), serviceController.updateService);
 
-// Delete
+// Video Management
+router.post('/:id/videos', verifyToken, upload.single('video'), serviceController.addVideo);
+router.put('/:id/videos/:vid', verifyToken, upload.single('video'), serviceController.replaceVideo);
+router.delete('/:id/videos/:vid', verifyToken, serviceController.deleteVideo);
+
+// Delete Service
 router.delete('/:id', verifyToken, serviceController.deleteService);
 
 module.exports = router;

@@ -18,7 +18,7 @@ const Header = ({ language, onLanguageChange }) => {
     membership: { en: 'Membership', am: 'አባልነት' },
     news: { en: 'Event and News', am: 'መረጃ እና ዜና' },
     contact: { en: 'Contact Us', am: 'ያግኙን' },
-    brand: { en: 'Officers Club', am: 'መኮንኖች ክበበብ' },
+    brand: { en: 'Golf Club', am: 'የጎልፍ ክለብ' },
   };
 
   const serviceLinks = [
@@ -42,7 +42,7 @@ const Header = ({ language, onLanguageChange }) => {
       <div className="container-fluid">
         <div className="d-lg-none w-100 d-flex align-items-center justify-content-between mobile-header-row">
           <NavLink className="navbar-brand mobile-logo-left" to="/">
-            <img src={logo} alt="Officers Club Logo" height="50" loading="lazy" className="rounded-circle mobile-logo" />
+            <img src={logo} alt="Golf Club Logo" height="50" loading="lazy" className="rounded-circle mobile-logo" />
           </NavLink>
           <div className="d-flex align-items-center gap-2">
             <button
@@ -74,7 +74,7 @@ const Header = ({ language, onLanguageChange }) => {
 
             <div className="header-logo-center">
               <NavLink className="navbar-brand" to="/">
-              <img src={logo} alt="Officers Club Logo" height="60"   loading="lazy" 
+              <img src={logo} alt="Golf Club Logo" height="60"   loading="lazy" 
  className="rounded-circle" />
  </NavLink>
  

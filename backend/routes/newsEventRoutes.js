@@ -1,17 +1,45 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/newsEventController');
 const { verifyToken } = require('../middleware/authMiddleware');
 const upload = require('../middleware/upload');
 
-// Public routes
-router.get('/', controller.getAllNewsEvents);
-router.get('/:id', controller.getNewsEventById);
+const {
+  getAllNewsEvents,
+  getNewsEventById,
+  createNewsEvent,
+  updateNewsEvent,
+  deleteNewsEvent
+} = require('../controllers/newsEventController');
 
-// Admin routes
-router.post('/', verifyToken, upload.single('image'), controller.createNewsEvent);
-router.put('/:id', verifyToken, upload.single('image'), controller.updateNewsEvent);
-router.delete('/:id', verifyToken, controller.deleteNewsEvent);
+// -------------------------------------------------------------
+// Public routes (Read-only)
+// -------------------------------------------------------------
+router.get('/', getAllNewsEvents);
+router.get('/:id', getNewsEventById);
+
+// -------------------------------------------------------------
+// Admin-only routes (Protected by verifyToken)
+// -------------------------------------------------------------
+router.post(
+  '/',
+  verifyToken,
+  upload.fields([
+    { name: 'image', maxCount: 1 },
+    { name: 'video', maxCount: 1 }
+  ]),
+  createNewsEvent
+);
+
+router.put(
+  '/:id',
+  verifyToken,
+  upload.fields([
+    { name: 'image', maxCount: 1 },
+    { name: 'video', maxCount: 1 }
+  ]),
+  updateNewsEvent
+);
+
+router.delete('/:id', verifyToken, deleteNewsEvent);
 
 module.exports = router;
-
